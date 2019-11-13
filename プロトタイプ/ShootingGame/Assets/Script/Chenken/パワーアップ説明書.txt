@@ -1,0 +1,62 @@
+﻿・基本的にはパワーアップ時処理はカスタマイズでやってもらいます。
+
+	->例の➀　プレイヤー　を　スピードアップパワーアップする時　スピードアップさせたい　場合
+			public class Player : Monobehavior
+			{
+				//何故かOnEnable（）に書くのか、それはオブジェクトプーリング化される可能性が高いためだと考えられます。
+				//普通のオブジェクトだったら、Awake（）内で書けば良い
+				private void OnEnable()
+				{
+					PowerUpManager.Instance.AddFunction(PowerManager.Power.PowerType.SpeedUP , SpeedUp);
+				}
+
+				//何故かOnDisable（）に書くのか、それはオブジェクトプーリング化される可能性が高いためだと考えられます。
+				//普通のオブジェクトだったら、OnDistroy（）内で書けば良い
+				private void OnDisable()
+				{
+					PowerUpManager.Instance.RemoveFunction(PowerManager.Power.PowerType.SpeedUP , SpeedUp);
+				}
+
+				private void SpeedUp
+				{
+					speed += 
+					//具体的な処理
+				}
+			}
+
+
+	->例の②　エネミー　を　プレイヤーが　敵全滅アイテムを取得時　消したい　場合
+
+			public class Enemy : Monobehavior
+			{
+				private void OnEnable()
+				{
+					PowerUpManager.Instance.AddFunction(PowerManager.Power.PowerType.KILLALL , DisableSelf);
+				}
+
+				private void OnDisable()
+				{
+					PowerUpManager.Instance.RemoveFunction(PowerManager.Power.PowerType.KILLALL , DisableSelf);
+				}
+
+				private void DisableSelf()
+				{
+					//具体的な処理、ここでは下の行が書いたようになります。
+					gameObject.SetActive(false);
+				}
+			}
+
+	このような流れで、実際なパワーアップ処理はどこでも入れられるようになります。
+	プレイヤーの関心があるところは　どのアイテムを取ったか、そしてそのアイテムの対応するどのイベントが発生したか　だけです。
+
+	現在選択のパワーアップ決定操作は
+		PowerUpManager.Instance.Upgrade();
+	
+	敵全滅させるパワーアップ
+		PowerUpManager.Instance.Annihilate();
+
+	アイテム取得時の操作
+		PowerUpManager.Instance.Pick();
+
+	具体的なパワーアップを取得操作
+		PowerUpManager.Instance.GetPower(PowerType.???);

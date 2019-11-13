@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1990893988371133228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990893988371133138}
+  - component: {fileID: 1990893988371133139}
+  m_Layer: 0
+  m_Name: CreateEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990893988371133138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990893988371133228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990893988371133139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990893988371133228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869a319440682a347a32c03f49daff16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createPosR5: {fileID: 0}
+  createPosR4: {fileID: 0}
+  createPosR3: {fileID: 0}
+  createPosR2: {fileID: 0}
+  createPosR1: {fileID: 0}
+  createPosR0: {fileID: 0}
+  createPos_FourGroupR: {fileID: 0}
+  createPosRm1: {fileID: 0}
+  createPosRm2: {fileID: 0}
+  createPosRm3: {fileID: 0}
+  createPosRm4: {fileID: 0}
+  createPosRm5: {fileID: 0}
+  createPosL5: {fileID: 0}
+  createPosL4: {fileID: 0}
+  createPosL3: {fileID: 0}
+  createPosL2: {fileID: 0}
+  createPosL1: {fileID: 0}
+  createPosL0: {fileID: 0}
+  createPos_FourGroupL: {fileID: 0}
+  createPosLm1: {fileID: 0}
+  createPosLm2: {fileID: 0}
+  createPosLm3: {fileID: 0}
+  createPosLm4: {fileID: 0}
+  createPosLm5: {fileID: 0}
+  createMiddleBossPos: {fileID: 0}
+  createBattleShipPos: {fileID: 0}
+  enemy_ClamChowder_Group_FourBehind: {fileID: 0}
+  enemy_Clamchowder_Group_Straight: {fileID: 0}
+  enemy_Clamchowder_Group_StraightBehind: {fileID: 0}
+  enemy_BattleShip: {fileID: 0}
+  enemy_Beelzebub_Group_Five: {fileID: 0}
+  saveEnemyObj: {fileID: 0}
+  PreviousCount: 0
+  frameCnt: 0
+  groupCnt: 1
+  turning_frame: 180
+  nextEnemy: 
+  isCreate: 0

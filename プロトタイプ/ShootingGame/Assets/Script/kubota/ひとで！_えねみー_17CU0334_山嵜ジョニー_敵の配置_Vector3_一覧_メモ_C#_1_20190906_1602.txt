@@ -1,0 +1,12 @@
+Vector3 createPos_enemy_Starfish_A = new Vector3(7.0f, 3.15f, 0.0f);
+Vector3 createPos_enemy_Starfish_B = new Vector3(7.0f, 0.996f, 0.0f);
+Vector3 createPos_enemy_Starfish_C = new Vector3(6.0f, 2.158f, 0.0f);
+Vector3 createPos_enemy_Starfish_D = new Vector3(3.154f, 4.15f, 0.0f);
+Vector3 createPos_enemy_Starfish_E = new Vector3(2.158f, -3.154f, 0.0f);
+Vector3 createPos_enemy_Starfish_F = new Vector3(0.996f, 4.15f, 0.0f);
+Vector3 createPos_enemy_Starfish_G = new Vector3(7.0f, -3.154f, 0.0f);
+Vector3 createPos_enemy_Starfish_H = new Vector3(7.0f, -0.996f, 0.0f);
+Vector3 createPos_enemy_Starfish_I = new Vector3(6.0f, -2.158f, 0.0f);
+Vector3 createPos_enemy_Starfish_J = new Vector3(3.154f, -4.15f, 0.0f);
+Vector3 createPos_enemy_Starfish_K = new Vector3(2.158f, 3.154f, 0.0f);
+Vector3 createPos_enemy_Starfish_L = new Vector3(0.996f, -4.15f, 0.0f);

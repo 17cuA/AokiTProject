@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 1ba8eb514cfea1f47adffdd6833b610e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body
+    100002: needle
+    100004: needle001
+    100006: needle002
+    100008: needle003
+    100010: needle004
+    100012: needle005
+    100014: needle006
+    100016: needle007
+    100018: pipe
+    100020: pipe001
+    100022: pipe002
+    100024: pipe003
+    100026: pipe004
+    100028: pipe005
+    100030: pipe006
+    100032: pipe007
+    100034: //RootNode
+    400000: Body
+    400002: needle
+    400004: needle001
+    400006: needle002
+    400008: needle003
+    400010: needle004
+    400012: needle005
+    400014: needle006
+    400016: needle007
+    400018: pipe
+    400020: pipe001
+    400022: pipe002
+    400024: pipe003
+    400026: pipe004
+    400028: pipe005
+    400030: pipe006
+    400032: pipe007
+    400034: //RootNode
+    2100000: 01 - Default
+    2100002: 03 - Default
+    2100004: 02 - Default
+    2300000: Body
+    2300002: needle
+    2300004: needle001
+    2300006: needle002
+    2300008: needle003
+    2300010: needle004
+    2300012: needle005
+    2300014: needle006
+    2300016: needle007
+    2300018: pipe
+    2300020: pipe001
+    2300022: pipe002
+    2300024: pipe003
+    2300026: pipe004
+    2300028: pipe005
+    2300030: pipe006
+    2300032: pipe007
+    3300000: Body
+    3300002: needle
+    3300004: needle001
+    3300006: needle002
+    3300008: needle003
+    3300010: needle004
+    3300012: needle005
+    3300014: needle006
+    3300016: needle007
+    3300018: pipe
+    3300020: pipe001
+    3300022: pipe002
+    3300024: pipe003
+    3300026: pipe004
+    3300028: pipe005
+    3300030: pipe006
+    3300032: pipe007
+    4300000: Body
+    4300002: pipe
+    4300004: needle
+    4300006: pipe001
+    4300008: pipe002
+    4300010: pipe003
+    4300012: pipe004
+    4300014: pipe005
+    4300016: pipe006
+    4300018: pipe007
+    4300020: needle001
+    4300022: needle002
+    4300024: needle003
+    4300026: needle004
+    4300028: needle005
+    4300030: needle006
+    4300032: needle007
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

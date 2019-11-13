@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4417715682554785829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3069264954416727105}
+  - component: {fileID: 3106418982908883525}
+  - component: {fileID: 541882103}
+  - component: {fileID: 541882102}
+  - component: {fileID: 1726588924}
+  - component: {fileID: 276323781233332384}
+  - component: {fileID: 38289025283440363}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3069264954416727105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.499983, y: -0.02, z: -1.5100002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3106418982908883525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e0d8f9740c1a34887be2352db5b120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &541882103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14046b0d031114d46a5d507663b939e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  P1: {fileID: 0}
+  P2: {fileID: 0}
+  Boss:
+  - {fileID: 0}
+  - {fileID: 0}
+  One_Boss_Script: {fileID: 0}
+  Two_Boss_Script: {fileID: 0}
+  frame: 0
+  BossID: 1
+--- !u!114 &541882102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896e1ece35273804a9e14cfb5386364a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1726588924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df86f7bfaf6f0a0458e49390f1b23323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  audio_se:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  audio_voice:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemy_UFO_Group_prefab: {fileID: 0}
+  enemy_UFO_Group_NoneShot_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Two_Top_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Two_Under_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_TwoWaveOnlyUp_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_TwoWaveOnlyDown_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Three_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Three_Item_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_ThreeWaveOnlyUp_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_ThreeWaveOnlyDown_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_ThreeWaveOnlyUp_Item_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_ThreeWaveOnlyDown_Item_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Four_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Four_NoItem_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Five_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Five_NoItem_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Seven_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_Straight_prefab: {fileID: 0}
+  enemy_Beelzebub_Group_FourWide_prefab: {fileID: 0}
+  enemy_Beelzebub_Group_FourWide_Item_prefab: {fileID: 0}
+  enemy_BeetleGroup_prefab: {fileID: 0}
+  enemy_BeetleGroup_Three_prefab: {fileID: 0}
+  boundMeteors_prefab: {fileID: 0}
+  enemy_Bacula_Sixteen_prefab: {fileID: 0}
+  enemy_Bacula_FourOnly_prefab: {fileID: 0}
+  enemy_ClamChowder_FourTriangle_prefab: {fileID: 0}
+  enemy_ClamChowder_FourTriangle_NoItem_prefab: {fileID: 0}
+  enemy_Beelzebub_Group_EightNormal_Item_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_TwelveStraight_prefab: {fileID: 0}
+  enemy_UFO_Group_Five_prefab: {fileID: 0}
+  enemy_Beetle_Group_Seven_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_SevenStraight_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_SixStraight_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_UpSevenDiagonal_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_DownSevenDiagonal_prefab: {fileID: 0}
+  enemy_ClamChowder_Group_TenStraight_prefab: {fileID: 0}
+--- !u!114 &276323781233332384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec63302415fb3074489c96b223b57309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyCreate_Data: {fileID: 0}
+--- !u!114 &38289025283440363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417715682554785829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d323b4215097e4ebf2001ea3ee4775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
