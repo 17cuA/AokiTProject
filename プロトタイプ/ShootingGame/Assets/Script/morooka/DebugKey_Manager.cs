@@ -19,12 +19,6 @@ public class DebugKey_Manager : MonoBehaviour
 		if(Input.GetKey(KeyCode.S))
 		{
 			if (Input.GetKey(KeyCode.Alpha1)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_01);
-			else if (Input.GetKey(KeyCode.Alpha2)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_02);
-			else if (Input.GetKey(KeyCode.Alpha3)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_03);
-			else if (Input.GetKey(KeyCode.Alpha4)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_04);
-			else if (Input.GetKey(KeyCode.Alpha5)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_05);
-			else if (Input.GetKey(KeyCode.Alpha6)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_06);
-			else if (Input.GetKey(KeyCode.Alpha7)) SceneMove(Scene_Manager.SCENE_NAME.eSTAGE_07);
 		}
 		// 任意ステージに移動---------------------------------
 	}

@@ -251,7 +251,7 @@ public class EnemyCreate : MonoBehaviour
 	private Enemy_Moai moai_Script;
 	private bool isCreate;       //表示するときにtrueにする
 	private bool isBaculaDestroy = false;
-	private bool isMiddleBossDead = false;
+	private bool isMiddleBossDead = true;
 	private bool isOneBossAlive = false;
 	private bool isTwoBossAlive = false;
 	private bool isMoaiAlive = false;
@@ -597,7 +597,7 @@ public class EnemyCreate : MonoBehaviour
             return;
         }
 
-        if (!isNowOneBoss && !isNowTwoBoss && !isNowMoai)
+        if (isMiddleBossDead)
         {
             frameCnt++;
         }
@@ -611,8 +611,9 @@ public class EnemyCreate : MonoBehaviour
             {
                 turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
                 frameCnt = bigCoreNextGroupFrame - 60;
-                groupCnt = bigCoreNextGroupNum;
+                groupCnt = 18;
                 isMiddleBossSkip = false;
+				isMiddleBossDead = true;
             }
         }
 
@@ -704,12 +705,6 @@ public class EnemyCreate : MonoBehaviour
 		if(Input.GetKey(KeyCode.R))
 		{
 			if (Input.GetKeyDown(KeyCode.H)) { Scene_Manager.Manager.Screen_Transition_To_Stage_01(); }
-			if (Input.GetKeyDown(KeyCode.J)) { Scene_Manager.Manager.Screen_Transition_To_Stage_02(); }
-			if (Input.GetKeyDown(KeyCode.K)) { Scene_Manager.Manager.Screen_Transition_To_Stage_03(); }
-			if (Input.GetKeyDown(KeyCode.L)) { Scene_Manager.Manager.Screen_Transition_To_Stage_04(); }
-			if (Input.GetKeyDown(KeyCode.B)) { Scene_Manager.Manager.Screen_Transition_To_Stage_05(); }
-			if (Input.GetKeyDown(KeyCode.N)) { Scene_Manager.Manager.Screen_Transition_To_Stage_06(); }
-			if (Input.GetKeyDown(KeyCode.M)) { Scene_Manager.Manager.Screen_Transition_To_Stage_07(); }
 		}
 		else
 		{
@@ -851,30 +846,6 @@ public class EnemyCreate : MonoBehaviour
 
 			case EnemyType.STAGE_01:
 				Scene_Manager.Manager.Screen_Transition_To_Stage_01();
-				break;
-
-			case EnemyType.STAGE_02:
-				Scene_Manager.Manager.Screen_Transition_To_Stage_02();
-				break;
-
-			case EnemyType.STAGE_03:
-				Scene_Manager.Manager.Screen_Transition_To_Stage_03();
-				break;
-
-			case EnemyType.STAGE_04:
-				Scene_Manager.Manager.Screen_Transition_To_Stage_04();
-				break;
-
-			case EnemyType.STAGE_05:
-				Scene_Manager.Manager.Screen_Transition_To_Stage_05();
-				break;
-
-			case EnemyType.STAGE_06:
-				Scene_Manager.Manager.Screen_Transition_To_Stage_06();
-				break;
-
-			case EnemyType.STAGE_07:
-				Scene_Manager.Manager.Screen_Transition_To_Stage_07();
 				break;
 
 			case EnemyType.CLAMCHOWDER_GROUP_UPSEVENDIAGONAL:
@@ -1182,6 +1153,7 @@ public class EnemyCreate : MonoBehaviour
 					saveEnemyObj = Boss_Middle;
 					Boss_Middle.transform.position = createMiddleBossPos.transform.position;
 					Boss_Middle.transform.rotation = transform.rotation;
+					isMiddleBossDead = false;
 				}
 				break;
 

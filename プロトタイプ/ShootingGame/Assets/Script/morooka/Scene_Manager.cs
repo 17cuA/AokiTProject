@@ -25,12 +25,6 @@ public class Scene_Manager : MonoBehaviour
 		eROGO,                  // 1	(ロゴシーン)
 		eTITLE,                 // 2	(タイトルシーン)
 		eSTAGE_01,          // 3	(ステージ1シーン)
-		eSTAGE_02,          // 4	(ステージ2シーン)
-		eSTAGE_03,          // 5	(ステージ3シーン)
-		eSTAGE_04,          // 6	(ステージ4シーン)
-		eSTAGE_05,          // 7	(ステージ5シーン)
-		eSTAGE_06,          // 8	(ステージ6シーン)
-		eSTAGE_07,          // 9	(ステージ7シーン)
 		eGAME_OVER,     // 10	(ゲームオーバーシーン)
 		eGAME_CLEAR,        // 11	(ゲームクリアシーン)
 	}
@@ -188,73 +182,6 @@ public class Scene_Manager : MonoBehaviour
 			Is_Fade_Out_Intermediate = true;
 		}
 		Next_Scene = SCENE_NAME.eSTAGE_01;
-	}
-
-	/// <summary>
-	/// ステージ_02 に移動
-	/// </summary>
-	public void Screen_Transition_To_Stage_02()
-	{
-		if (!Is_Fade_Out_Intermediate && Is_Fade_Finished)
-		{
-			Is_Fade_Out_Intermediate = true;
-		}
-		Next_Scene = SCENE_NAME.eSTAGE_02;
-	}
-	/// <summary>
-	/// ステージ_03 に移動
-	/// </summary>
-	public void Screen_Transition_To_Stage_03()
-	{
-		if (!Is_Fade_Out_Intermediate && Is_Fade_Finished)
-		{
-			Is_Fade_Out_Intermediate = true;
-		}
-		Next_Scene = SCENE_NAME.eSTAGE_03;
-	}
-	/// <summary>
-	/// ステージ_04 に移動
-	/// </summary>
-	public void Screen_Transition_To_Stage_04()
-	{
-		if (!Is_Fade_Out_Intermediate && Is_Fade_Finished)
-		{
-			Is_Fade_Out_Intermediate = true;
-		}
-		Next_Scene = SCENE_NAME.eSTAGE_04;
-	}
-	/// <summary>
-	/// ステージ_05 に移動
-	/// </summary>
-	public void Screen_Transition_To_Stage_05()
-	{
-		if (!Is_Fade_Out_Intermediate && Is_Fade_Finished)
-		{
-			Is_Fade_Out_Intermediate = true;
-		}
-		Next_Scene = SCENE_NAME.eSTAGE_05;
-	}
-	/// <summary>
-	/// ステージ_06 に移動
-	/// </summary>
-	public void Screen_Transition_To_Stage_06()
-	{
-		if (!Is_Fade_Out_Intermediate && Is_Fade_Finished)
-		{
-			Is_Fade_Out_Intermediate = true;
-		}
-		Next_Scene = SCENE_NAME.eSTAGE_06;
-	}
-	/// <summary>
-	/// ステージ_07 に移動
-	/// </summary>
-	public void Screen_Transition_To_Stage_07()
-	{
-		if (!Is_Fade_Out_Intermediate && Is_Fade_Finished)
-		{
-			Is_Fade_Out_Intermediate = true;
-		}
-		Next_Scene = SCENE_NAME.eSTAGE_07;
 	}
 
 	/// <summary>
