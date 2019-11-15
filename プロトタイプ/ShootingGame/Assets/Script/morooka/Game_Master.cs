@@ -147,28 +147,9 @@ public class Game_Master : MonoBehaviour
             case "Title":
 				display_score_1P = 0;
 				display_score_2P = 0;
-				Number_Of_People = PLAYER_NUM.eONE_PLAYER;
+				Number_Of_People = PLAYER_NUM.eUNDECIDED;
 				break;
             case "Stage_01":
-				Debug.Log(Number_Of_People);
-                Stage_Start();
-                break;
-            case "Stage_02":
-                Stage_Start();
-				break;
-			case "Stage_03":
-                Stage_Start();
-				break;
-			case "Stage_04":
-                Stage_Start();
-				break;
-			case "Stage_05":
-                Stage_Start();
-				break;
-			case "Stage_06":
-                Stage_Start();
-				break;
-			case "Stage_07":
                 Stage_Start();
                 break;
             case "GameOver":
@@ -181,11 +162,6 @@ public class Game_Master : MonoBehaviour
     void Update()
     {
         Frame_Count++;
-
-        //if(Input.GetKeyDown(KeyCode.C))
-        //{
-        //    Management_In_Stage = CONFIGURATION_IN_STAGE.eBOSS_CUT_IN;
-        //}
     }
 
 	/// <summary>
@@ -211,9 +187,13 @@ public class Game_Master : MonoBehaviour
     /// </summary>
     private void Stage_Start()
     {
-        //Management_In_Stage = CONFIGURATION_IN_STAGE.eNORMAL;
         _Display = GameObject.Find("Score_Display").GetComponent<Score_Display>();
 		Is_Completed_For_Warning_Animation = false;
+
+		if(Number_Of_People == PLAYER_NUM.eUNDECIDED)
+		{
+			Number_Of_People = PLAYER_NUM.eONE_PLAYER;
+		}
     }
 
 	/// <summary>
@@ -226,6 +206,7 @@ public class Game_Master : MonoBehaviour
 		Number_Of_People = set_num;
 		return Number_Of_People;
 	}
+
 	/// <summary>
 	/// ゲームオーバーに行く前にボタンを押せば
 	/// 復活ができるように
@@ -246,9 +227,5 @@ public class Game_Master : MonoBehaviour
 			player1.SetActive(true);
 			player1.GetComponent<Player1>().ResponPreparation(5);
 		}
-	}
-	public void CountDown_Number(int frame)
-	{
-		
 	}
 }

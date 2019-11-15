@@ -450,7 +450,7 @@ public class Obj_Storage : MonoBehaviour
 				CsvData.Add(line.Split(','));               //カンマごとに割り振る
 			}
 		}
-		else
+		else if(Game_Master.Number_Of_People == Game_Master.PLAYER_NUM.eTWO_PLAYER)
 		{
 			TextAsset Word = Resources.Load("CSV_Folder/" + File_name2) as TextAsset;           //csvファイルを入れる変数
 			StringReader csv = new StringReader(Word.text);                                             //読み込んだデータをcsvの変数の中に格納
