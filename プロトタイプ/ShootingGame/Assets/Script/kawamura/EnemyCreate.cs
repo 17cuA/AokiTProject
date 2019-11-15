@@ -220,7 +220,9 @@ public class EnemyCreate : MonoBehaviour
 	#region Middle
 	private GameObject enemy_MoaiBossGroup;
 	private GameObject middleBossOBj;
-	private Enemy_MiddleBoss middleBoss_Script;
+	public Enemy_MiddleBoss middleBoss_Script;
+
+	public bool deadkakuninnnnnnn = false;
 	//private GameObject enemy_SlowFollow;
 	#endregion
 	// 保管オブジェクト情報
@@ -251,11 +253,11 @@ public class EnemyCreate : MonoBehaviour
 	private Enemy_Moai moai_Script;
 	private bool isCreate;       //表示するときにtrueにする
 	private bool isBaculaDestroy = false;
-	private bool isMiddleBossDead = true;
+	public bool isMiddleBossDead = true;
 	private bool isOneBossAlive = false;
 	private bool isTwoBossAlive = false;
 	private bool isMoaiAlive = false;
-	private bool isMiddleBossSkip = true;
+	public bool isMiddleBossSkip = true;
 	private bool isNowOneBoss = false;
 	private bool isNowTwoBoss = false;
 	private bool isNowMoai = false;
@@ -604,18 +606,31 @@ public class EnemyCreate : MonoBehaviour
 
 		DebugKeyUpdate();
 
+		deadkakuninnnnnnn = middleBoss_Script.Is_Dead;
+
 		//中ボス撃破
-		if (middleBoss_Script != null && isMiddleBossSkip)
-        {
-            if (middleBoss_Script.Is_Dead)
-            {
-                turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
-                frameCnt = bigCoreNextGroupFrame - 60;
-                groupCnt = 18;
-                isMiddleBossSkip = false;
-				isMiddleBossDead = true;
-            }
-        }
+
+		if(deadkakuninnnnnnn)
+		{
+			//turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
+			//frameCnt = bigCoreNextGroupFrame - 60;
+			//groupCnt = 18;
+			//isMiddleBossSkip = false;
+			//isMiddleBossDead = true;
+			Scene_Manager.Manager.Screen_Transition_To_Clear();
+		}
+		//if (middleBoss_Script != null)
+  //      {
+  //          if (middleBoss_Script.Is_Dead)
+  //          {
+  //              //turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
+  //              //frameCnt = bigCoreNextGroupFrame - 60;
+  //              //groupCnt = 18;
+  //              isMiddleBossSkip = false;
+		//		isMiddleBossDead = true;
+		//		Scene_Manager.Manager.Screen_Transition_To_Clear();
+		//	}
+		//}
 
         //第一ボス出現時に無線をONにする🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲
         if (groupCnt == bigCoreMK2GrouNum && frameCnt == turning_frame - 60f)
