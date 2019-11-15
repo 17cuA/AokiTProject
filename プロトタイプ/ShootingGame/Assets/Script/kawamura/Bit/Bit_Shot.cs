@@ -10,7 +10,7 @@ using StorageReference;
 public class Bit_Shot : MonoBehaviour
 {
 
-    GameObject saveObj;
+	GameObject saveObj;
 
 	public GameObject playerObj;        //プレイヤーオブジェクト
 	public GameObject player2Obj;        //プレイヤー2オブジェクト
@@ -33,10 +33,10 @@ public class Bit_Shot : MonoBehaviour
 	int missileDelayCnt = 0;            //ミサイルのディレイ
 	public int shotDelayMax;                   //ショットの間隔
 
-    public GameObject myObj;
-    public Bit_Shot myShot;
+	public GameObject myObj;
+	public Bit_Shot myShot;
 
-    Player_Bullet pBullet;
+	Player_Bullet pBullet;
 	List<GameObject> bullet_data = new List<GameObject>();
 	//bool activeLaser = true;
 
@@ -57,8 +57,8 @@ public class Bit_Shot : MonoBehaviour
 
 	void Start()
 	{
-        myObj = gameObject;
-        myShot = myObj.GetComponent<Bit_Shot>();
+		myObj = gameObject;
+		myShot = myObj.GetComponent<Bit_Shot>();
 		//撃つ位置取得
 		shot_Mazle = gameObject.transform.Find("Bullet_Fire").gameObject;
 		//Bit_Formation_3取得
@@ -66,9 +66,9 @@ public class Bit_Shot : MonoBehaviour
 		//向き入れます,撃つ間隔の最大設定します,
 		Direction = transform.rotation;
 		shotDelayMax = 5;
-        Bullet_cnt_Max = 10;
+		Bullet_cnt_Max = 10;
 
-        laser_Obj.SetActive(true);       //レーザーの子供が動かないようにするための変数
+		laser_Obj.SetActive(true);       //レーザーの子供が動かないようにするための変数
 
 	}
 
@@ -309,32 +309,32 @@ public class Bit_Shot : MonoBehaviour
 					{
 						//if (pl2.Is_Burst)
 						//{
-							shot_Delay = 0;
-							switch (pl2.bullet_Type)
-							{
-								case Player2.Bullet_Type.Single:
-									Single_Fire();
-									//effect_Mazle_Fire[effectNum].Play();
-									effectNum++;
-									break;
-								case Player2.Bullet_Type.Double:
-									Double_Fire();
-									//effect_Mazle_Fire[effectNum].Play();
-									effectNum++;
-									break;
-								default:
-									break;
-							}
-							if (effectNum > 4)
-							{
-								effectNum = 0;
-							}
-							if (pl2.activeMissile && missileDelayCnt > pl2.missile_dilay_max)
-							{
-								Missile_Fire();
-								missileDelayCnt = 0;
-							}
-							shot_Delay = 0;
+						shot_Delay = 0;
+						switch (pl2.bullet_Type)
+						{
+							case Player2.Bullet_Type.Single:
+								Single_Fire();
+								//effect_Mazle_Fire[effectNum].Play();
+								effectNum++;
+								break;
+							case Player2.Bullet_Type.Double:
+								Double_Fire();
+								//effect_Mazle_Fire[effectNum].Play();
+								effectNum++;
+								break;
+							default:
+								break;
+						}
+						if (effectNum > 4)
+						{
+							effectNum = 0;
+						}
+						if (pl2.activeMissile && missileDelayCnt > pl2.missile_dilay_max)
+						{
+							Missile_Fire();
+							missileDelayCnt = 0;
+						}
+						shot_Delay = 0;
 
 						//}
 					}
@@ -348,7 +348,7 @@ public class Bit_Shot : MonoBehaviour
 
 					//if (Input.GetButton("P2_Fire1") || Input.GetKey(KeyCode.Space))
 					//{
-					if(pl2.Is_Burst)
+					if (pl2.Is_Burst)
 					{
 						// 連続で4発まで撃てるようにした
 						if (shotNum < 5)
@@ -419,18 +419,18 @@ public class Bit_Shot : MonoBehaviour
 			{
 				//if (/*Bullet_cnt < Bullet_cnt_Max*/ Bullet_cnt < 100)
 				//{
-                if(Bullet_cnt<8)
-                {
-                    saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Direction);
-                    pBullet = saveObj.GetComponent<Player_Bullet>();
-                    pBullet.bShot = myShot;
+				if (Bullet_cnt < 8)
+				{
+					saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Direction);
+					pBullet = saveObj.GetComponent<Player_Bullet>();
+					pBullet.bShot = myShot;
 
-                    //SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
-                    Bullet_cnt += 1;
-                }
-                //}
+					//SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
+					Bullet_cnt += 1;
+				}
+				//}
 
-            }
+			}
 			else
 			{
 				if (Bullet_cnt < 8 && bullet_data.Count < 10)
@@ -451,19 +451,19 @@ public class Bit_Shot : MonoBehaviour
 				}
 
 				//if (Bullet_cnt < 8 && bullet_data.Count < 10)
-    //            {
-    //                bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Direction));
-    //                for (int i = 0; i < bullet_data.Count; i++)
-    //                {
-    //                    if (bullet_data[i] != null)
-    //                    {
-    //                        saveObj = bullet_data[i];
-    //                        pBullet = saveObj.GetComponent<Player_Bullet>();
-    //                        pBullet.bShot = myShot;
-    //                    }
-    //                }
+				//            {
+				//                bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Direction));
+				//                for (int i = 0; i < bullet_data.Count; i++)
+				//                {
+				//                    if (bullet_data[i] != null)
+				//                    {
+				//                        saveObj = bullet_data[i];
+				//                        pBullet = saveObj.GetComponent<Player_Bullet>();
+				//                        pBullet.bShot = myShot;
+				//                    }
+				//                }
 
-    //                SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
+				//                SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
 				//	Bullet_cnt += 1;
 				//}
 			}
@@ -478,36 +478,36 @@ public class Bit_Shot : MonoBehaviour
 		{
 			if (!pl2.Is_Change_Auto)
 			{
-                if (Bullet_cnt < 8)
-                {
-                    saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Direction);
-                    pBullet = saveObj.GetComponent<Player_Bullet>();
-                    pBullet.bShot = myShot;
+				if (Bullet_cnt < 8)
+				{
+					saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Direction);
+					pBullet = saveObj.GetComponent<Player_Bullet>();
+					pBullet.bShot = myShot;
 
-                    //SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
-                    Bullet_cnt += 1;
-                }
-            }
-            else
+					//SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
+					Bullet_cnt += 1;
+				}
+			}
+			else
 			{
-                if (Bullet_cnt < 8 && bullet_data.Count < 10)
-                {
-                    bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Direction));
-                    for (int i = 0; i < bullet_data.Count; i++)
-                    {
-                        if (bullet_data[i] != null)
-                        {
-                            saveObj = bullet_data[i];
-                            pBullet = saveObj.GetComponent<Player_Bullet>();
-                            pBullet.bShot = myShot;
-                        }
-                    }
+				if (Bullet_cnt < 8 && bullet_data.Count < 10)
+				{
+					bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Direction));
+					for (int i = 0; i < bullet_data.Count; i++)
+					{
+						if (bullet_data[i] != null)
+						{
+							saveObj = bullet_data[i];
+							pBullet = saveObj.GetComponent<Player_Bullet>();
+							pBullet.bShot = myShot;
+						}
+					}
 
-                    //SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
-                    Bullet_cnt += 1;
-                }
-            }
-            if (Bullet_cnt_Max != 8)
+					//SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
+					Bullet_cnt += 1;
+				}
+			}
+			if (Bullet_cnt_Max != 8)
 			{
 				Bullet_cnt_Max = 8;
 			}
@@ -518,76 +518,87 @@ public class Bit_Shot : MonoBehaviour
 	//ダブル発射関数
 	private void Double_Fire()
 	{
-		if(bf.bState==Bit_Formation_3.BitState.Player1)
+		if (bf.bState == Bit_Formation_3.BitState.Player1)
 		{
-            if (bullet_data.Count < 16)
-            {
-                bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Direction));
-                for (int i = 0; i < bullet_data.Count; i++)
-                {
-                    if (bullet_data[i] != null)
-                    {
-                        saveObj = bullet_data[i];
-                        pBullet = saveObj.GetComponent<Player_Bullet>();
-                        pBullet.bShot = myShot;
-                    }
-                }
+			if (bullet_data.Count < 16)
+			{
+				bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Direction));
+				for (int i = 0; i < bullet_data.Count; i++)
+				{
+					if (bullet_data[i] != null)
+					{
+						saveObj = bullet_data[i];
+						pBullet = saveObj.GetComponent<Player_Bullet>();
+						pBullet.bShot = myShot;
+					}
+				}
 
-                saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Quaternion.Euler(0, 0, 45));
-                pBullet = saveObj.GetComponent<Player_Bullet>();
-                pBullet.bShot = myShot;
+				saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP1_OPTION_BULLET, shot_Mazle.transform.position, Quaternion.Euler(0, 0, 45));
+				pBullet = saveObj.GetComponent<Player_Bullet>();
+				pBullet.bShot = myShot;
 
-                SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
+				SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
 				Bullet_cnt += 2;
 			}
-            if (Bullet_cnt_Max != 20)
-            {
-                Bullet_cnt_Max = 20;
-            }
+			if (Bullet_cnt_Max != 20)
+			{
+				Bullet_cnt_Max = 20;
+			}
 
-        }
-        if (bf.bState == Bit_Formation_3.BitState.Player2)
+		}
+		else if (bf.bState == Bit_Formation_3.BitState.Player2)
 		{
-            if (bullet_data.Count < 16)
-            {
-                bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Direction));
-                for (int i = 0; i < bullet_data.Count; i++)
-                {
-                    if (bullet_data[i] != null)
-                    {
-                        saveObj = bullet_data[i];
-                        pBullet = saveObj.GetComponent<Player_Bullet>();
-                        pBullet.bShot = myShot;
-                    }
-                }
+			if (bullet_data.Count < 16)
+			{
+				bullet_data.Add(Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Direction));
+				for (int i = 0; i < bullet_data.Count; i++)
+				{
+					if (bullet_data[i] != null)
+					{
+						saveObj = bullet_data[i];
+						pBullet = saveObj.GetComponent<Player_Bullet>();
+						pBullet.bShot = myShot;
+					}
+				}
 
-                saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Quaternion.Euler(0, 0, 45));
-                pBullet = saveObj.GetComponent<Player_Bullet>();
-                pBullet.bShot = myShot;
+				saveObj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eP2_OPTION_BULLET, shot_Mazle.transform.position, Quaternion.Euler(0, 0, 45));
+				pBullet = saveObj.GetComponent<Player_Bullet>();
+				pBullet.bShot = myShot;
 
-                //SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
+				//SE_Manager.SE_Obj.SE_Active(Obj_Storage.Storage_Data.audio_se[4]);
 				Bullet_cnt += 2;
 			}
-            if (Bullet_cnt_Max != 20)
-            {
-                Bullet_cnt_Max = 20;
-            }
+			if (Bullet_cnt_Max != 20)
+			{
+				Bullet_cnt_Max = 20;
+			}
 
-        }
+		}
 
-        //if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
-        //{
-        //	Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eOPTION_BULLET, shot_Mazle.transform.position, Direction);
-        //	Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eOPTION_BULLET, shot_Mazle.transform.position, /*new Quaternion(-8,1,45,0)Quaternion.Euler(0, 0, 45));
-        //	shot_Delay = 0;
-        //}
-    }
+		//if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
+		//{
+		//	Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eOPTION_BULLET, shot_Mazle.transform.position, Direction);
+		//	Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eOPTION_BULLET, shot_Mazle.transform.position, /*new Quaternion(-8,1,45,0)Quaternion.Euler(0, 0, 45));
+		//	shot_Delay = 0;
+		//}
+	}
 
 	private void Missile_Fire()
 	{
-		GameObject obj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.ePLAYER_MISSILE, shot_Mazle.transform.position, Direction);
-		obj.GetComponent<Missile>().Setting_On_Reboot(1);
-		missileDelayCnt = 0;
+		if (bf.bState == Bit_Formation_3.BitState.Player1)
+		{
+			GameObject obj2 = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.ePLAYER_MISSILE, shot_Mazle.transform.position, Direction);
+			obj2.GetComponent<Missile>().Setting_On_Reboot(1);
+		}
+		else if (bf.bState == Bit_Formation_3.BitState.Player2)
+		{
+			GameObject obj2 = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.ePLAYER_MISSILE2, shot_Mazle.transform.position, Direction);
+			obj2.GetComponent<Missile>().Setting_On_Reboot(1);
+
+		}
+		//GameObject obj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.ePLAYER_MISSILE, shot_Mazle.transform.position, Direction);
+		//obj.GetComponent<Missile>().Setting_On_Reboot(1);
+		//missileDelayCnt = 0;
 	}
 
 	private void ActiveLaser()

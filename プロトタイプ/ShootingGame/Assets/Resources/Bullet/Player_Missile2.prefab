@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &759855350916813604
+--- !u!1001 &5002275096746991867
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5354736178567886499, guid: b4f8849167fea4041a178d9ea8502454,
         type: 3}
       propertyPath: m_Name
-      value: Player_Missile
+      value: Player_Missile2
       objectReference: {fileID: 0}
     - target: {fileID: 6447552643832479747, guid: b4f8849167fea4041a178d9ea8502454,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 4250887071465163542, guid: b4f8849167fea4041a178d9ea8502454,
         type: 3}
       propertyPath: Bullet_Type
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4f8849167fea4041a178d9ea8502454, type: 3}
