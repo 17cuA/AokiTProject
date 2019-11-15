@@ -124,16 +124,6 @@ public class Game_Master : MonoBehaviour
 
     private void Awake()
 	{
-		//if (Name_List == null)
-		//{
-		//	Database_Manager database_ = new Database_Manager("CSV_Folder/Obaject_Name");
-		//	Name_List = new string[database_.Database_Array.GetLength(0)];
-		//	Name_List = database_.goreco(0);
-		//}
-		//if (Boss_Data == null)
-		//{
-		//	Boss_Data = new Database_Manager("Boss/Boss_Data");
-		//}
 		if (MY == null)
 		{
 			MY = GetComponent<Game_Master>();
@@ -147,7 +137,7 @@ public class Game_Master : MonoBehaviour
             case "Title":
 				display_score_1P = 0;
 				display_score_2P = 0;
-				Number_Of_People = PLAYER_NUM.eUNDECIDED;
+				Number_Of_People = PLAYER_NUM.eONE_PLAYER;
 				break;
             case "Stage_01":
                 Stage_Start();
