@@ -91,14 +91,8 @@ namespace StorageReference
 				case Game_Master.OBJECT_NAME.eUFOTYPE_ENEMY:
 					obj = Obj_Storage.Storage_Data.UfoType_Enemy.Active_Obj();
 					break;
-				case Game_Master.OBJECT_NAME.eBEELZEBUBTYPE_ENEMY:
-					obj = Obj_Storage.Storage_Data.BeelzebubType_Enemy.Active_Obj();
-					break;
 				case Game_Master.OBJECT_NAME.eCLAMCHOWDERTYPE_ENEMY:
 					obj = Obj_Storage.Storage_Data.ClamChowderType_Enemy.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eOCTOPUSTYPE_ENEMY:
-					obj = Obj_Storage.Storage_Data.OctopusType_Enemy.Active_Obj();
 					break;
 				case Game_Master.OBJECT_NAME.ePOWERUP_ITEM:
 					obj = Obj_Storage.Storage_Data.PowerUP_Item.Active_Obj();
@@ -200,14 +194,8 @@ namespace StorageReference
 				case Game_Master.OBJECT_NAME.eUFOTYPE_ENEMY:
 					obj = Obj_Storage.Storage_Data.UfoType_Enemy.Active_Obj();
 					break;
-				case Game_Master.OBJECT_NAME.eBEELZEBUBTYPE_ENEMY:
-					obj = Obj_Storage.Storage_Data.BeelzebubType_Enemy.Active_Obj();
-					break;
 				case Game_Master.OBJECT_NAME.eCLAMCHOWDERTYPE_ENEMY:
 					obj = Obj_Storage.Storage_Data.ClamChowderType_Enemy.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eOCTOPUSTYPE_ENEMY:
-					obj = Obj_Storage.Storage_Data.OctopusType_Enemy.Active_Obj();
 					break;
 				case Game_Master.OBJECT_NAME.ePOWERUP_ITEM:
 					obj = Obj_Storage.Storage_Data.PowerUP_Item.Active_Obj();

@@ -58,51 +58,18 @@ public class ObjectStorage_Control : MonoBehaviour
 			{
 				Medium_Boss_Data = Obj_Storage.Storage_Data.Boss_Middle.Get_Obj()[0].GetComponent<character_status>();
 				One_Boss_Data = Obj_Storage.Storage_Data.GetBoss(1).GetComponent<character_status>();
-				Moai_Boss_Data = Obj_Storage.Storage_Data.GetBoss(3).GetComponent<character_status>();
 				Tow_Boss_Data = Obj_Storage.Storage_Data.GetBoss(2).GetComponent<character_status>();
 
 				//----------------------------- エネミーセット ---------------------------------------
 				Before_The_Last_Boss = new List<Object_Pooling>();
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_UFO_Group);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_UFO_Group_NoneShot);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Two_Top);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Two_Under);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_TwoWaveOnlyUp);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_TwoWaveOnlyDown);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Three);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Three_Item);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_ThreeWaveOnlyUp);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_ThreeWaveOnlyDown);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_ThreeWaveOnlyUp_Item);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_ThreeWaveOnlyDown_Item);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Four);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Four_NoItem);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Five);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Five_NoItem);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Seven);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Straight);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_Beelzebub_Group_FourWide);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_Beelzebub_Group_FourWide_Item);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_BeetleGroup);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_BeetleGroup_Three);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.boundMeteors);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_Bacula_Sixteen);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_Bacula_FourOnly);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_FourTriangle);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_FourTriangle_NoItem);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_Beelzebub_Group_EightNormal_Item);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_UFO_Group_Five);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_Beetle_Group_Seven);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_SevenStraight);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_SixStraight);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_UpSevenDiagonal);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_DownSevenDiagonal);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.enemy_ClamChowder_Group_TenStraight);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.SmallBeam_Bullet_E);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.UfoType_Enemy);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.ClamChowderType_Enemy);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.OctopusType_Enemy);
-				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.BeelzebubType_Enemy);
 				Before_The_Last_Boss.Add(Obj_Storage.Storage_Data.BattleShipType_Enemy);
 				//----------------------------- エネミーセット ---------------------------------------
 			}
@@ -178,38 +145,6 @@ public class ObjectStorage_Control : MonoBehaviour
 				}
 			}
 
-			// モアイの削除
-			if (Moai_Boss_Data != null)
-			{
-				if (Moai_Boss_Data.Is_Dead)
-				{
-					// バレットの削除
-					if (Boss_Frame_Cnt == 0)
-					{
-						Des_Obj_B(ref Obj_Storage.Storage_Data.Moai_Bullet);
-					}
-					// 目レーザーの削除
-					else if (Boss_Frame_Cnt == 1)
-					{
-						Des_Obj_B(ref Obj_Storage.Storage_Data.Moai_Eye_Laser);
-					}
-					// モアイミニの削除
-					else if (Boss_Frame_Cnt == 2)
-					{
-						Des_Obj_B(ref Obj_Storage.Storage_Data.Moai_Mini_Group);
-					}
-					// 口レーザーの削除
-					else if (Boss_Frame_Cnt == 3)
-					{
-						Des_Obj_B(ref Obj_Storage.Storage_Data.Moai_Mouth_Laser);
-					}
-					else if(Boss_Frame_Cnt == 4)
-					{
-						Des_Obj_B(ref Obj_Storage.Storage_Data.Moai);
-						Boss_Frame_Cnt = 0;
-					}
-				}
-			}
 			#endregion
 
 			#region　無線時に毎回処理する

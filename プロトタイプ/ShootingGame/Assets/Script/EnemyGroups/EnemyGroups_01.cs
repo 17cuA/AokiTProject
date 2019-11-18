@@ -57,7 +57,7 @@ public class EnemyGroups_01 : MonoBehaviour
 		new EnemyCreate.EnemyGroup("バキュラ6", EnemyCreate.EnemyType.BACULA_GROUP_SIX, EnemyCreate.CreatePos.R0, false, 360),
 		new EnemyCreate.EnemyGroup("隕石20", EnemyCreate.EnemyType.BOUNDMETEORS, EnemyCreate.CreatePos.L0, false, 300),
 		new EnemyCreate.EnemyGroup("隕石20", EnemyCreate.EnemyType.BOUNDMETEORS, EnemyCreate.CreatePos.L0, false, 270),
-		new EnemyCreate.EnemyGroup("🔲🔲🔲モアイ🔲🔲🔲", EnemyCreate.EnemyType.MOAI, EnemyCreate.CreatePos.L0, false, 120),
+		new EnemyCreate.EnemyGroup("隕石20", EnemyCreate.EnemyType.BOUNDMETEORS, EnemyCreate.CreatePos.L0, false, 270),
 		new EnemyCreate.EnemyGroup("ヒトデ12", EnemyCreate.EnemyType.STARFISH, EnemyCreate.CreatePos.L0, true, 600),
 		new EnemyCreate.EnemyGroup("円盤上10狭射撃", EnemyCreate.EnemyType.UFO_GROUP, EnemyCreate.CreatePos.R1, true, 0),
 		new EnemyCreate.EnemyGroup("円盤下10射撃", EnemyCreate.EnemyType.UFO_GROUP, EnemyCreate.CreatePos.Rm3, true, 75),

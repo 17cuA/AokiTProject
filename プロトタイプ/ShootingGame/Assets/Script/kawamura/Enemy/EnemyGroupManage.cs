@@ -17,7 +17,6 @@ public class EnemyGroupManage : MonoBehaviour
 	public int notDefeatedEnemyCnt = 0;     //倒されずに画面外に出た数
     public string myName;
 
-    BaculasManager bacuManager;
 
 	public bool isDead = false;
 	public bool isItemDrop=true;
@@ -28,7 +27,6 @@ public class EnemyGroupManage : MonoBehaviour
         if (myName == "Enemy_Bacula_Four")
         {
             parentObj = transform.parent.gameObject;
-            bacuManager = parentObj.GetComponent<BaculasManager>();
             childNum = transform.childCount * 16;
             remainingEnemiesCnt = childNum;
 
@@ -82,13 +80,6 @@ public class EnemyGroupManage : MonoBehaviour
 			notDefeatedEnemyCnt = 0;
 			defeatedEnemyCnt = 0;
 			remainingEnemiesCnt = childNum;
-            if(bacuManager)
-            {
-                //群を管理している親の残っている敵カウントマイナス
-                bacuManager.remainingEnemiesCnt--;
-                //倒された敵のカウントプラス
-                bacuManager.defeatedEnemyCnt++;
-            }
             gameObject.SetActive(false);
 			//Destroy(this.gameObject);
 			//gameObject.SetActive(false);

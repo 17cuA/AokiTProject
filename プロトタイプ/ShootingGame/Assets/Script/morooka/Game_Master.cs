@@ -121,7 +121,6 @@ public class Game_Master : MonoBehaviour
 	private One_Boss One_Bossinfo;      //前半ボスの情報
 	private Two_Boss Two_Bossinfo;      //後半ボスの情報
 	private Enemy_MiddleBoss Middle_Bossinfo;   //ビックコアの情報
-	private Enemy_Moai Moai_Bossinfo;           //モアイの情報
 
 	private void Awake()
 	{
