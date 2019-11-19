@@ -218,9 +218,10 @@ public class EnemyCreate : MonoBehaviour
 	#endregion
 	// 中ボスオブジェクト
 	#region Middle
-	private GameObject enemy_MoaiBossGroup;
 	private GameObject middleBossOBj;
-	private Enemy_MiddleBoss middleBoss_Script;
+	public Enemy_MiddleBoss middleBoss_Script;
+
+	public bool deadkakuninnnnnnn = false;
 	//private GameObject enemy_SlowFollow;
 	#endregion
 	// 保管オブジェクト情報
@@ -240,25 +241,19 @@ public class EnemyCreate : MonoBehaviour
 	[SerializeField, NonEditable] private string nextEnemy;
     private EnemyGroupManage group_Script;
 	private GameObject oneBossOBj;
-	private One_Boss oneBoss_Script;
 	private GameObject mistEffectObj;
 	private ParticleSystem mistParticle;
 	private BackgroundActivation backActive_Script;
 	private GameObject twoBossObj;
-	private Two_Boss twoBoss_Script;
 	private GameObject enemy_BattleShip;
-	private GameObject moaiObj;
-	private Enemy_Moai moai_Script;
 	private bool isCreate;       //表示するときにtrueにする
 	private bool isBaculaDestroy = false;
-	private bool isMiddleBossDead = true;
+	public bool isMiddleBossDead = true;
 	private bool isOneBossAlive = false;
 	private bool isTwoBossAlive = false;
-	private bool isMoaiAlive = false;
-	private bool isMiddleBossSkip = true;
+	public bool isMiddleBossSkip = true;
 	private bool isNowOneBoss = false;
 	private bool isNowTwoBoss = false;
-	private bool isNowMoai = false;
 	private bool isDebug = false;
 	private bool isLastBossWireless = false;
 	// ビッグコアの出現グループ番号と経過フレーム
@@ -271,10 +266,6 @@ public class EnemyCreate : MonoBehaviour
 	private int bigCoreMK2GrouNum = 43;
     private int bigCoreMK2GroupFrame = 6345;
     private int bigCoreMK2NextGroupFrame = 6465;
-	// モアイとモアイ後の敵グループの出現グループ番号と経過フレーム
-	private int moaiGroupNum = 49;
-    private int moaiGroupFrame = 8205;
-    private int moaiGroupNextGroupFrame = 8325;
 	// ビッグコア3の出現グループ番号と経過フレーム
     private int bigCoreMK3GroupNum = 97;
     private int bigCoreMK3GroupFrame = 12185;
@@ -327,12 +318,6 @@ public class EnemyCreate : MonoBehaviour
 					bigCoreMK2NextGroupFrame = allFrame + enemyGroups[num].nextGroupFrame;
 					break;
 
-				case EnemyType.MOAI:
-					moaiGroupNum = num;
-					moaiGroupFrame = allFrame;
-					moaiGroupNextGroupFrame = allFrame + enemyGroups[num].nextGroupFrame;
-					break;
-
 				case EnemyType.BIGCOREMK3:
 					bigCoreMK3GroupNum = num;
 					bigCoreNextGroupFrame = allFrame;
@@ -374,84 +359,6 @@ public class EnemyCreate : MonoBehaviour
 	private void CreatePosUpload()
 	{
 		//位置オブジェクト取得
-        //上側取得
-        #region CreatePosTop
-        createPosT17 = GameObject.Find("CreatePos_Top_17").transform;
-        createPosT16 = GameObject.Find("CreatePos_Top_16").transform;
-        createPosT15 = GameObject.Find("CreatePos_Top_15").transform;
-        createPosT14 = GameObject.Find("CreatePos_Top_14").transform;
-        createPosT13 = GameObject.Find("CreatePos_Top_13").transform;
-        createPosT12 = GameObject.Find("CreatePos_Top_12").transform;
-        createPosT11 = GameObject.Find("CreatePos_Top_11").transform;
-        createPosT10 = GameObject.Find("CreatePos_Top_10").transform;
-        createPosT9 = GameObject.Find("CreatePos_Top_9").transform;
-        createPosT8 = GameObject.Find("CreatePos_Top_8").transform;
-        createPosT7 = GameObject.Find("CreatePos_Top_7").transform;
-        createPosT6 = GameObject.Find("CreatePos_Top_6").transform;
-        createPosT5 = GameObject.Find("CreatePos_Top_5").transform;
-        createPosT4 = GameObject.Find("CreatePos_Top_4").transform;
-        createPosT3 = GameObject.Find("CreatePos_Top_3").transform;
-        createPosT2 = GameObject.Find("CreatePos_Top_2").transform;
-        createPosT1 = GameObject.Find("CreatePos_Top_1").transform;
-        createPosT0 = GameObject.Find("CreatePos_Top_0").transform;
-        createPosTm1 = GameObject.Find("CreatePos_Top_-1").transform;
-        createPosTm2 = GameObject.Find("CreatePos_Top_-2").transform;
-        createPosTm3 = GameObject.Find("CreatePos_Top_-3").transform;
-        createPosTm4 = GameObject.Find("CreatePos_Top_-4").transform;
-        createPosTm5 = GameObject.Find("CreatePos_Top_-5").transform;
-        createPosTm6 = GameObject.Find("CreatePos_Top_-6").transform;
-        createPosTm7 = GameObject.Find("CreatePos_Top_-7").transform;
-        createPosTm8 = GameObject.Find("CreatePos_Top_-8").transform;
-        createPosTm9 = GameObject.Find("CreatePos_Top_-9").transform;
-        createPosTm10 = GameObject.Find("CreatePos_Top_-10").transform;
-        createPosTm11 = GameObject.Find("CreatePos_Top_-11").transform;
-        createPosTm12 = GameObject.Find("CreatePos_Top_-12").transform;
-        createPosTm13 = GameObject.Find("CreatePos_Top_-13").transform;
-        createPosTm14 = GameObject.Find("CreatePos_Top_-14").transform;
-        createPosTm15 = GameObject.Find("CreatePos_Top_-15").transform;
-        createPosTm16 = GameObject.Find("CreatePos_Top_-16").transform;
-        createPosTm17 = GameObject.Find("CreatePos_Top_-17").transform;
-        #endregion
-
-        //下側取得
-        #region CreatePosUnder
-        //createPosU17 = GameObject.Find("CreatePos_Under_17").transform;
-        //createPosU16 = GameObject.Find("CreatePos_Under_16").transform;
-        //createPosU15 = GameObject.Find("CreatePos_Under_15").transform;
-        //createPosU14 = GameObject.Find("CreatePos_Under_14").transform;
-        //createPosU13 = GameObject.Find("CreatePos_Under_13").transform;
-        //createPosU12 = GameObject.Find("CreatePos_Under_12").transform;
-        //createPosU11 = GameObject.Find("CreatePos_Under_11").transform;
-        //createPosU10 = GameObject.Find("CreatePos_Under_10").transform;
-        //createPosU9 = GameObject.Find("CreatePos_Under_9").transform;
-        //createPosU8 = GameObject.Find("CreatePos_Under_8").transform;
-        //createPosU7 = GameObject.Find("CreatePos_Under_7").transform;
-        //createPosU6 = GameObject.Find("CreatePos_Under_6").transform;
-        //createPosU5 = GameObject.Find("CreatePos_Under_5").transform;
-        //createPosU4 = GameObject.Find("CreatePos_Under_4").transform;
-        //createPosU3 = GameObject.Find("CreatePos_Under_3").transform;
-        //createPosU2 = GameObject.Find("CreatePos_Under_2").transform;
-        //createPosU1 = GameObject.Find("CreatePos_Under_1").transform;
-        //createPosU0 = GameObject.Find("CreatePos_Under_0").transform;
-        //createPosUm1 = GameObject.Find("CreatePos_Under_-1").transform;
-        //createPosUm2 = GameObject.Find("CreatePos_Under_-2").transform;
-        //createPosUm3 = GameObject.Find("CreatePos_Under_-3").transform;
-        //createPosUm4 = GameObject.Find("CreatePos_Under_-4").transform;
-        //createPosUm5 = GameObject.Find("CreatePos_Under_-5").transform;
-        //createPosUm6 = GameObject.Find("CreatePos_Under_-6").transform;
-        //createPosUm7 = GameObject.Find("CreatePos_Under_-7").transform;
-        //createPosUm8 = GameObject.Find("CreatePos_Under_-8").transform;
-        //createPosUm9 = GameObject.Find("CreatePos_Under_-9").transform;
-        //createPosUm10 = GameObject.Find("CreatePos_Under_-10").transform;
-        //createPosUm11 = GameObject.Find("CreatePos_Under_-11").transform;
-        //createPosUm12 = GameObject.Find("CreatePos_Under_-12").transform;
-        //createPosUm13 = GameObject.Find("CreatePos_Under_-13").transform;
-        //createPosUm14 = GameObject.Find("CreatePos_Under_-14").transform;
-        //createPosUm15 = GameObject.Find("CreatePos_Under_-15").transform;
-        //createPosUm16 = GameObject.Find("CreatePos_Under_-16").transform;
-        //createPosUm17 = GameObject.Find("CreatePos_Under_-17").transform;
-        #endregion
-
         //右側取得
         #region CreatePosRight
         createPosR5 = GameObject.Find("CreatePos_Right_5").transform;
@@ -565,8 +472,6 @@ public class EnemyCreate : MonoBehaviour
         enemy_Beetle_Group_Five = Resources.Load("Enemy/Enemy_Beetle_Group") as GameObject;
         enemy_Beetle_Group_Seven = Resources.Load("Enemy/Enemy_Beetle_Group_Seven") as GameObject;
 
-        enemy_MoaiBossGroup = Resources.Load("Enemy/Enemy_MoaiBossGroup") as GameObject;
-
         mistEffectObj = Resources.Load("Effects/Other/O004") as GameObject;
         mistParticle = mistEffectObj.GetComponent<ParticleSystem>();
         //backActive_Script = mistEffectObj.GetComponent<BackgroundActivation>();
@@ -575,17 +480,6 @@ public class EnemyCreate : MonoBehaviour
         middleBossOBj = Obj_Storage.Storage_Data.GetMiddleBoss();
         middleBoss_Script = middleBossOBj.GetComponent<Enemy_MiddleBoss>();
 
-        oneBossOBj = Obj_Storage.Storage_Data.GetBoss(1);
-        oneBoss_Script = oneBossOBj.GetComponent<One_Boss>();
-        isOneBossAlive = true;
-
-        twoBossObj = Obj_Storage.Storage_Data.GetBoss(2);
-        twoBoss_Script = twoBossObj.GetComponent<Two_Boss>();
-        isTwoBossAlive = true;
-
-        moaiObj = Obj_Storage.Storage_Data.GetBoss(3);
-        moai_Script = moaiObj.GetComponent<Enemy_Moai>();
-        isMoaiAlive = true;
 		#endregion
 	}
 
@@ -604,18 +498,31 @@ public class EnemyCreate : MonoBehaviour
 
 		DebugKeyUpdate();
 
+		deadkakuninnnnnnn = middleBoss_Script.Is_Dead;
+
 		//中ボス撃破
-		if (middleBoss_Script != null && isMiddleBossSkip)
-        {
-            if (middleBoss_Script.Is_Dead)
-            {
-                turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
-                frameCnt = bigCoreNextGroupFrame - 60;
-                groupCnt = 18;
-                isMiddleBossSkip = false;
-				isMiddleBossDead = true;
-            }
-        }
+
+		if(deadkakuninnnnnnn)
+		{
+			//turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
+			//frameCnt = bigCoreNextGroupFrame - 60;
+			//groupCnt = 18;
+			//isMiddleBossSkip = false;
+			//isMiddleBossDead = true;
+			Scene_Manager.Manager.Screen_Transition_To_Clear();
+		}
+		//if (middleBoss_Script != null)
+  //      {
+  //          if (middleBoss_Script.Is_Dead)
+  //          {
+  //              //turning_frame = bigCoreNextGroupFrame; //←今爆発がでかいのでちょっと間を空けます
+  //              //frameCnt = bigCoreNextGroupFrame - 60;
+  //              //groupCnt = 18;
+  //              isMiddleBossSkip = false;
+		//		isMiddleBossDead = true;
+		//		Scene_Manager.Manager.Screen_Transition_To_Clear();
+		//	}
+		//}
 
         //第一ボス出現時に無線をONにする🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲
         if (groupCnt == bigCoreMK2GrouNum && frameCnt == turning_frame - 60f)
@@ -630,52 +537,6 @@ public class EnemyCreate : MonoBehaviour
             Wireless_sinario.Is_using_wireless = true;
         }
 
-        //第一ボスを撃破したら間隔を詰める🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲
-        if (oneBoss_Script != null)
-        {
-            if (oneBoss_Script.Is_Dead)
-            {
-                if (isOneBossAlive)
-                {
-                    if (backActive_Script)
-                    {
-                        backActive_Script.TransparencyChangeTrigger();
-                        Wireless_sinario.Is_using_wireless = true;
-                    }
-                    isNowOneBoss = false;
-                    isOneBossAlive = false;
-                }
-            }
-        }
-
-        if (moai_Script != null)
-        {
-            if (moai_Script.Is_Dead)
-            {
-                if (isMoaiAlive)
-                {
-                    isNowMoai = false;
-                    isMoaiAlive = false;
-                }
-            }
-        }
-
-        //第二ボスを撃破🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲
-        if (twoBoss_Script != null)
-        {
-            if (twoBoss_Script.Is_Dead)
-            {
-                if (isTwoBossAlive)
-                {
-                    backActive_Script.TransparencyChangeTrigger();
-                    isNowTwoBoss = false;
-                    Wireless_sinario.Is_using_wireless = true;
-                    isTwoBossAlive = false;
-
-                }
-            }
-        }
-		
         CreateEnemyGroup_01();
     }
 
@@ -718,10 +579,6 @@ public class EnemyCreate : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.M)) { EnemyDebugNumberUpdate(EnemyType.BIGCOREMK2, false); }
 			// ビッグコアMK2後
 			if (Input.GetKeyDown(KeyCode.B)) { EnemyDebugNumberUpdate(EnemyType.BIGCOREMK2, true); }
-			// モアイ
-			if (Input.GetKeyDown(KeyCode.B) & Input.GetKey(KeyCode.H)) { EnemyDebugNumberUpdate(EnemyType.MOAI, false); }
-			// モアイ後
-			if (Input.GetKeyDown(KeyCode.B) & Input.GetKey(KeyCode.U)) { EnemyDebugNumberUpdate(EnemyType.MOAI, true); }
 			// ビッグコアMK3
 			if (Input.GetKeyDown(KeyCode.L)) { EnemyDebugNumberUpdate(EnemyType.BIGCOREMK3, false); isDebug = true; }
 		}
@@ -771,7 +628,6 @@ public class EnemyCreate : MonoBehaviour
 		BEELZEBUB_GROUP_EIGHTNORMAL,
 		STARFISH,
 		BOUNDMETEORS,
-		MOAI,
 		GAMECLEAR,
 		STAGE_01,
 		STAGE_02,
@@ -856,27 +712,6 @@ public class EnemyCreate : MonoBehaviour
 				Instantiate(enemy_ClamChowder_Group_DownSevenDiagonal, createPosR0.position, transform.rotation);
 				break;
 
-			case EnemyType.MOAI:
-				if (groupFrameCheckDebugFlag)
-				{
-					GroupFrameCheckDebug("モアイ", groupCnt, turning_frame);
-					GroupFrameCheckDebug("モアイ後", groupCnt + 1, turning_frame + enemyGroups[groupCnt].nextGroupFrame);
-				}
-				else
-				{
-					GameObject moai = Obj_Storage.Storage_Data.Moai.Active_Obj();
-					moai.transform.position = new Vector3(15.44f, -17.0f, 0.0f);
-					Wireless_sinario.Is_using_wireless = true;
-					isNowMoai = true;
-				}
-				break;
-
-			case EnemyType.BOUNDMETEORS:
-				saveEnemyObj = Obj_Storage.Storage_Data.boundMeteors.Active_Obj();
-				saveEnemyObj.transform.position = createMeteorPosR0.transform.position;
-				//Instantiate(Enemy_BoundMeteors, createMeteorPosR0.transform.position, transform.rotation);
-				break;
-
 			case EnemyType.STARFISH:
 				Instantiate(enemy_Star_Fish_Spowner, pos, transform.rotation);
 				break;
@@ -905,30 +740,9 @@ public class EnemyCreate : MonoBehaviour
                 //enemy_UFO_Group.transform.rotation = transform.rotation;
                 break;
 
-            case EnemyType.UFO_GROUP:
-                //Object_Pooling pEnemy_UFO_Group = new Object_Pooling(Resources.Load("Enemy/Enemy_UFO_Group_NoneShot") as GameObject, 1, "enemy_UFO_Group");
-                //GameObject enemy_UFO_Group = pEnemy_UFO_Group.Active_Obj();
-                GameObject enemy_UFO_Group2 = Obj_Storage.Storage_Data.enemy_UFO_Group.Active_Obj();
-                enemy_UFO_Group2.transform.position = pos + new Vector3(8.5f, 0, 0);
-                enemy_UFO_Group2.transform.rotation = transform.rotation;
-                //Object_Pooling pEnemy_UFO_Group = new Object_Pooling(Resources.Load("Enemy/Enemy_UFO_Group_NoneShot") as GameObject, 1, "enemy_UFO_Group");
-                //GameObject enemy_UFO_Group = Obj_Storage.Storage_Data.enemy_UFO_Group_NoneShot.Active_Obj();
-                //enemy_UFO_Group.transform.position = createPosR3.transform.position + new Vector3(8.5f, 0, 0);
-                //enemy_UFO_Group.transform.rotation = transform.rotation;
-                break;
-
-            case EnemyType.CLAMCHOWDER_GROUP_STRAIGHT:
-                saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Straight.Active_Obj();
-                saveEnemyObj.transform.position = pos;
-                //Instantiate(enemy_Clamchowder_Group_Straight, pos, transform.rotation);
-                break;
-
             case EnemyType.CLAMCHOWDER_GROUP_FOUR:
                 if (!isItem)
                 {
-                    saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Four.Active_Obj();
-                    saveEnemyObj.transform.position = createPos_FourGroupL.transform.position;
-                    //Instantiate(enemy_ClamChowder_Group_Four_NoItem, pos, transform.rotation);
                 }
                 else
                 {
@@ -972,9 +786,6 @@ public class EnemyCreate : MonoBehaviour
             case EnemyType.CLAMCHOWDER_GROUP_THREE:
                 if (!isItem)
                 {
-                    saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Three.Active_Obj();
-                    saveEnemyObj.transform.position = createPos_FourGroupL.transform.position+pos;
-                    //Instantiate(enemy_ClamChowder_Group_FourTriangle_NoItem, pos, transform.rotation);
                 }
                 else
                 {
@@ -1003,41 +814,8 @@ public class EnemyCreate : MonoBehaviour
                 //Instantiate(enemy_ClamChowder_Group_Two_Under, createPos_FourGroupL.transform.position, transform.rotation);
                 break;
 
-            case EnemyType.CLAMCHOWDER_GROUP_TWOWAVEONLYUP:
-                saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_TwoWaveOnlyUp.Active_Obj();
-                saveEnemyObj.transform.position = pos;
-				//Instantiate(enemy_ClamChowder_Group_TwoWaveOnlyUp, pos, transform.rotation);
-				break;
-
-            case EnemyType.CLAMCHOWDER_GROUP_TWOWAVEONLYDOWN:
-                saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_TwoWaveOnlyDown.Active_Obj();
-                saveEnemyObj.transform.position = pos;
-				//Instantiate(enemy_ClamChowder_Group_TwoWaveOnlyDown, pos, transform.rotation);
-				break;
-
-			case EnemyType.CLAMCHOWDER_GROUP_TENSTRAIGHT:
-				//saveEnemyObj = Instantiate(enemy_ClamChowder_Group_TenStraight, pos, transform.rotation);
-				saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_TenStraight.Active_Obj();
-				saveEnemyObj.transform.position = pos;
-				group_Script = saveEnemyObj.GetComponent<EnemyGroupManage>();
-				group_Script.isItemDrop = isItem;
-				break;
-
             case EnemyType.CLAMCHOWDER_GROUP_FOURVERTICALATTACK:
                 Instantiate(enemy_ClamChowder_Group_FourVerticalAttack, createPos_FourGroupL.transform.position, transform.rotation);
-                break;
-
-            case EnemyType.CLAMCHOWDER_GROUP_SEVEN:
-                saveEnemyObj = Obj_Storage.Storage_Data.enemy_ClamChowder_Group_Seven.Active_Obj();
-                saveEnemyObj.transform.position = pos;
-                //Instantiate(enemy_ClamChowder_Group_Seven, pos, transform.rotation);
-                return saveEnemyObj;
-
-            case EnemyType.BEETLE_GROUP_THREE:
-                saveEnemyObj = Obj_Storage.Storage_Data.enemy_BeetleGroup_Three.Active_Obj();
-                saveEnemyObj.transform.position = new Vector3(15, -8, 0);
-                //GameObject beetleGroup_Three = Instantiate(enemy_Beetle_Group_Three, createPosRm3.transform.position, transform.rotation);
-                //beetleGroup_Three.transform.position = new Vector3(15, -8, 0);
                 break;
 
             case EnemyType.BEETLE_GROUP_FIVE:
@@ -1045,14 +823,7 @@ public class EnemyCreate : MonoBehaviour
                 beetleGroup_Five.transform.position = new Vector3(15, -8, 0);
                 break;
 
-            case EnemyType.BEETLE_GROUP_SEVEN:
-                saveEnemyObj = Obj_Storage.Storage_Data.enemy_Beetle_Group_Seven.Active_Obj();
-                saveEnemyObj.transform.position = new Vector3(13, -8, 0);
-                //GameObject beetleGroup_Seven = Instantiate(enemy_Beetle_Group_Seven, createPosRm3.transform.position, transform.rotation);
-                //beetleGroup_Seven.transform.position = new Vector3(15, -8, 0);
-                break;
-
-            case EnemyType.BEELZEBUB_GROUP_FOURWIDE:
+			case EnemyType.BEELZEBUB_GROUP_FOURWIDE:
 				if (!isItem)
 				{
                     //saveEnemyObj = Obj_Storage.Storage_Data.enemy_Beelzebub_Group_FourWide.Active_Obj();
@@ -1081,41 +852,12 @@ public class EnemyCreate : MonoBehaviour
                 break;
 
             case EnemyType.BATTLESHIP:
-                GameObject Battle_Ship1 = Instantiate(enemy_BattleShip, createPosR0.position, enemy_BattleShip.transform.rotation);
-                Battle_Ship1.transform.position = createPosR0.position;
-                BattleshipType_Enemy b1 = Battle_Ship1.GetComponent<BattleshipType_Enemy>();
-                b1.is_sandwich = false;
-                b1.Is_up = false;
-                //            saveEnemyObj = Obj_Storage.Storage_Data.BattleShipType_Enemy.Active_Obj();
-                //            saveEnemyObj.transform.position = pos;
-                ////GameObject Battle_Ship1 = Instantiate(enemy_BattleShip, pos, enemy_BattleShip.transform.rotation);
-                //BattleshipType_Enemy b1 = saveEnemyObj.GetComponent<BattleshipType_Enemy>();
-                //b1.is_sandwich = false;
-                //b1.Is_up = false;
                 break;
 
 			case EnemyType.BATTLESHIP_TOP:
-                GameObject Battle_Ship6 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                BattleshipType_Enemy b6 = Battle_Ship6.GetComponent<BattleshipType_Enemy>();
-                b6.Is_up = false;
-                //            saveEnemyObj = Obj_Storage.Storage_Data.BattleShipType_Enemy.Active_Obj();
-                //            saveEnemyObj.transform.position = createBattleShipPos.transform.position;
-                //            //GameObject Battle_Ship4 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                //BattleshipType_Enemy b4 = saveEnemyObj.GetComponent<BattleshipType_Enemy>();
-                //            b4.is_sandwich = true;
-                //            b4.Is_up = false;
                 break;
 
             case EnemyType.BATTLESHIP_UNDER:
-                GameObject Battle_Ship2 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                BattleshipType_Enemy b2 = Battle_Ship2.GetComponent<BattleshipType_Enemy>();
-                b2.Is_up = true;
-                //saveEnemyObj = Obj_Storage.Storage_Data.BattleShipType_Enemy.Active_Obj();
-                //saveEnemyObj.transform.position = createBattleShipPos.transform.position;
-                ////GameObject Battle_Ship5 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                //BattleshipType_Enemy b5 = saveEnemyObj.GetComponent<BattleshipType_Enemy>();
-                //b5.is_sandwich = true;
-                //b5.Is_up = true;
                 break;
 
             case EnemyType.BATTLESHIP_TOPANDUNDER:
@@ -1158,49 +900,49 @@ public class EnemyCreate : MonoBehaviour
 				break;
 
             case EnemyType.BIGCOREMK2:
-				if (groupFrameCheckDebugFlag)
-				{
-					GroupFrameCheckDebug("ボス1", groupCnt, turning_frame);
-					GroupFrameCheckDebug("ボス1後", groupCnt + 1, turning_frame + enemyGroups[groupCnt].nextGroupFrame);
-				}
-				else
-				{
-					GameObject Boss_01 = Obj_Storage.Storage_Data.Boss_1.Active_Obj();
-					Boss_01.transform.position = new Vector3(10.0f, 0.0f, 0.0f);
-					GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
-					mistSaveObj.transform.position = new Vector3(0, 0, 3);
-					mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
-					backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
-					mistParticle.Play();
-					backActive_Script.TransparencyChangeTrigger();
-					isNowOneBoss = true;
-				}
+				//if (groupFrameCheckDebugFlag)
+				//{
+				//	GroupFrameCheckDebug("ボス1", groupCnt, turning_frame);
+				//	GroupFrameCheckDebug("ボス1後", groupCnt + 1, turning_frame + enemyGroups[groupCnt].nextGroupFrame);
+				//}
+				//else
+				//{
+				//	GameObject Boss_01 = Obj_Storage.Storage_Data.Boss_1.Active_Obj();
+				//	Boss_01.transform.position = new Vector3(10.0f, 0.0f, 0.0f);
+				//	GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
+				//	mistSaveObj.transform.position = new Vector3(0, 0, 3);
+				//	mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
+				//	backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
+				//	mistParticle.Play();
+				//	backActive_Script.TransparencyChangeTrigger();
+				//	isNowOneBoss = true;
+				//}
                 break;
 
 			case EnemyType.BIGCOREMK3:
-				if (groupFrameCheckDebugFlag)
-				{
-					GroupFrameCheckDebug("ボス2", groupCnt, turning_frame);
-				}
-				else
-				{
-					GameObject Boss_02 = Obj_Storage.Storage_Data.Boss_2.Active_Obj();
-					Boss_02.transform.position = new Vector3(13.0f, 0.0f, 0.0f);
-					isNowTwoBoss = true;
+				//if (groupFrameCheckDebugFlag)
+				//{
+				//	GroupFrameCheckDebug("ボス2", groupCnt, turning_frame);
+				//}
+				//else
+				//{
+				//	GameObject Boss_02 = Obj_Storage.Storage_Data.Boss_2.Active_Obj();
+				//	Boss_02.transform.position = new Vector3(13.0f, 0.0f, 0.0f);
+				//	isNowTwoBoss = true;
 
-					//GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
-					//backActive_Script.TransparencyChangeTrigger();
-					if (isDebug)
-					{
-						GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
-						backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
+				//	//GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
+				//	//backActive_Script.TransparencyChangeTrigger();
+				//	if (isDebug)
+				//	{
+				//		GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
+				//		backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
 
-						mistEffectObj.transform.position = new Vector3(0, 0, 3);
-						mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
-						mistParticle.Play();
-					}
-					backActive_Script.TransparencyChangeTrigger();
-				}
+				//		mistEffectObj.transform.position = new Vector3(0, 0, 3);
+				//		mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
+				//		mistParticle.Play();
+				//	}
+				//	backActive_Script.TransparencyChangeTrigger();
+				//}
 				break;
 
 
@@ -1273,7 +1015,7 @@ public class EnemyCreate : MonoBehaviour
 		new EnemyGroup("バキュラ6", EnemyType.BACULA_GROUP_SIX, CreatePos.R0, false, 360),
 		new EnemyGroup("隕石20", EnemyType.BOUNDMETEORS, CreatePos.L0, false, 300),
 		new EnemyGroup("隕石20", EnemyType.BOUNDMETEORS, CreatePos.L0, false, 270),
-		new EnemyGroup("🔲🔲🔲モアイ🔲🔲🔲", EnemyType.MOAI, CreatePos.L0, false, 120),
+		new EnemyGroup("隕石20", EnemyType.BOUNDMETEORS, CreatePos.L0, false, 270),
 		new EnemyGroup("ヒトデ12", EnemyType.STARFISH, CreatePos.L0, true, 600),
 		new EnemyGroup("円盤上10狭射撃", EnemyType.UFO_GROUP, CreatePos.R1, true, 0),
 		new EnemyGroup("円盤下10射撃", EnemyType.UFO_GROUP, CreatePos.Rm3, true, 75),
