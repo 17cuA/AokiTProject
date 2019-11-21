@@ -21,8 +21,6 @@ public class Obj_Storage : MonoBehaviour
 	private GameObject player_2_Prefab;                         //プレイヤー2のプレハブ
 	private GameObject Player_Missile1;                         //プレイヤー1のミサイルプレハブ
 	private GameObject Player_Missile2;                         //プレイヤー２のミサイルプレハブ
-	private GameObject Boss1_Prefab;                                //ステージ１のボスのプレハブ
-	private GameObject Boss2_Prefab;                                //ステージ2のボスのプレハブ
 	private GameObject Bullet_Prefab_P;                         //弾のPrefab情報
 	private GameObject BulletPrefab_P2;            //２P用の弾プレハブ情報
 	private GameObject BulletPrefab_Option_P1;         //オプション用の球プレハブ情報１P用
@@ -35,7 +33,6 @@ public class Obj_Storage : MonoBehaviour
 	private GameObject ClamChowderType_Enemy_Prefab;    // 貝型エネミーのプレハブ
 	private GameObject OctopusType_Enemy_Prefab;            // タコ型エネミーのプレハブ
 	private GameObject BeelzebubType_Enemy_Prefab;      // ハエ型エネミーのプレハブ
-	private GameObject BattleShip_Enemy_Prefab;     // 戦艦型エネミーのプレハブ
 	private GameObject Star_Fish_Enemy_Prefab;          //ヒトデ型のエネミーのプレハブ
 	private GameObject P1_Option_Prefab;                            //オプションのプレハブ
 	private GameObject P2_Option_Prefab;                        //2P用のオプションのプレハブ
@@ -46,17 +43,12 @@ public class Obj_Storage : MonoBehaviour
 	//---------------------------------------------------------------------------------
 	private GameObject Boss_Middle_Prefab;                      //中ボスのプレハブ
 	private GameObject Laser_Line_Prefab;               // レーザーのプレハブ
-	private GameObject One_Boss_Laser_Prefab;                   // ボス1のレーザープレハブ
-	private GameObject One_Boss_BousndBullet_Prefab;        // ボス1のバウンド弾プレハブ
-	private GameObject Two_Boss_Laser_Prefab;                   //ボス２のレーザープレハブ
 
 	//実際に作られたオブジェクト
 	public Object_Pooling Enemy1;
 	public Object_Pooling Medium_Size_Enemy1;
 	public Object_Pooling Player;
 	public Object_Pooling Player_2;
-	public Object_Pooling Boss_1;
-	public Object_Pooling Boss_2;
 	public Object_Pooling PlayerBullet;
 	public Object_Pooling Player2Bullet;
 	public Object_Pooling P1_OptionBullet;
@@ -65,20 +57,15 @@ public class Obj_Storage : MonoBehaviour
 	public Object_Pooling PlayerMissile2;
 	public Object_Pooling PlayerMissile_TowWay;
 	public Object_Pooling EnemyBullet;
-	public Object_Pooling BattleShipBullet;
 	public Object_Pooling Beam_Bullet_E;
     public Object_Pooling UfoType_Enemy;
 	public Object_Pooling ClamChowderType_Enemy;
-	public Object_Pooling BattleShipType_Enemy;
 	public Object_Pooling StarFish_Enemy;
 	public Object_Pooling P1_Option;
 	public Object_Pooling P2_Option;
 	public Object_Pooling PowerUP_Item;
 	public Object_Pooling Boss_Middle;
 	public Object_Pooling Laser_Line;
-	public Object_Pooling One_Boss_Laser;
-	public Object_Pooling One_Boss_BousndBullet;
-	public Object_Pooling Two_Boss_Laser;                       //２ボスのレーザー、プーリング
 																  //effect関係-----------------------------------------------------
 	public Object_Pooling[] Effects = new Object_Pooling[17];
 	//マップの作製時に使う処理
@@ -128,8 +115,6 @@ public class Obj_Storage : MonoBehaviour
 
 		Player_Prefab = Resources.Load("Player/Player") as GameObject;
 		player_2_Prefab = Resources.Load("Player/Player2") as GameObject;
-		Boss1_Prefab = Resources.Load("Boss/BigCoreMk2") as GameObject;
-		Boss2_Prefab = Resources.Load("Boss/bick_core_mk3") as GameObject;
 		Bullet_Prefab_P = Resources.Load("Bullet/Player_Bullet_1P") as GameObject;
 		BulletPrefab_P2 = Resources.Load("Bullet/Player_Bullet_2P") as GameObject;
 		BulletPrefab_Option_P1 = Resources.Load("Bullet/Option_Bullet_1P") as GameObject;
@@ -144,7 +129,6 @@ public class Obj_Storage : MonoBehaviour
 		ClamChowderType_Enemy_Prefab = Resources.Load("Enemy/ClamChowderType_Enemy") as GameObject;
 		OctopusType_Enemy_Prefab = Resources.Load("Enemy/OctopusType_Enemy") as GameObject; ;
 		BeelzebubType_Enemy_Prefab = Resources.Load("Enemy/BeelzebubType_Enemy") as GameObject;
-		BattleShip_Enemy_Prefab = Resources.Load("Enemy/BattleshipType_Enemy") as GameObject;
 		Star_Fish_Enemy_Prefab = Resources.Load("Enemy/Enemy_hitode_type") as GameObject;       //ヒトデ型の敵のロード
 		P1_Option_Prefab = Resources.Load("Option/Option") as GameObject;       //1Pオプションのロード
 		P2_Option_Prefab = Resources.Load("Option/Option_2P") as GameObject;       //2Pオプションのロード
@@ -152,10 +136,6 @@ public class Obj_Storage : MonoBehaviour
 		Item_Prefab = Resources.Load("Item/Item_Test") as GameObject;        //アイテムのロード
 		Boss_Middle_Prefab = Resources.Load("Enemy/Enemy_MiddleBoss_Father") as GameObject;		//中ボス
 		Laser_Line_Prefab = Resources.Load("Bullet/LaserLine") as GameObject;
-		One_Boss_Laser_Prefab = Resources.Load("Bullet/One_Boss_LaserLine") as GameObject;
-		One_Boss_BousndBullet_Prefab = Resources.Load("Bullet/One_Boss_BousndBullet") as GameObject;
-		Two_Boss_Laser_Prefab = Resources.Load("Bullet/Two_Boss_Laser") as GameObject;       //２ボスレーザー用のプレハブ修正
-
 
 		Effects_Prefab[0] = Resources.Load<GameObject>("Effects/Explosion/E001_1P");    //プレイヤー爆発
 		Effects_Prefab[1] = Resources.Load<GameObject>("Effects/Attachment/A000");      //プレイヤー登場時に使用するジェット噴射
@@ -253,8 +233,6 @@ public class Obj_Storage : MonoBehaviour
 
         Player = new Object_Pooling(Player_Prefab, 1, "Player");                        //プレイヤー生成
 		Player_2 = new Object_Pooling(player_2_Prefab, 1, "Player_2");                  //プレイヤー2生成
-		Boss_1 = new Object_Pooling(Boss1_Prefab, 1, "One_Boss");                              //ステージ1のボス生成
-		Boss_2 = new Object_Pooling(Boss2_Prefab, 1, "Two_Boss");                               //ステージ2のボス生成
 		PlayerBullet = new Object_Pooling(Bullet_Prefab_P, 5, "Player1_Bullet");         //プレイヤーのバレットを生成
 		Player2Bullet = new Object_Pooling(BulletPrefab_P2, 5, "Player2_Bullet");
 		P1_OptionBullet = new Object_Pooling(BulletPrefab_Option_P1, 10, "Option_Bullet_1P");
@@ -263,19 +241,14 @@ public class Obj_Storage : MonoBehaviour
 		PlayerMissile2 = new Object_Pooling(Player_Missile2, 8, "Player_Missile");      //プレイヤー２のミサイルの生成
 		EnemyBullet = new Object_Pooling(Bullet_Prefab_E, 10, "Enemy_Bullet");          //エネミーのバレットを生成
 		Beam_Bullet_E = new Object_Pooling(Beam_Bullet_E_Prefab, 10, "Enemy_Beam_Bullet");      // エネミーのビーム型バレットを生成
-        BattleShipBullet = new Object_Pooling(Bullet_Prefab_BattleShip, 20, "BattleShip_Enemy_Bullet"); //戦艦タイプのバレットの生成
 		UfoType_Enemy = new Object_Pooling(UfoType_Enemy_Prefab, 1, "UfoType_Enemy");       // UFO型エネミーを生成
 		ClamChowderType_Enemy = new Object_Pooling(ClamChowderType_Enemy_Prefab, 1, "ClamChowderType_Enemy");       // 貝型エネミーを生成
-		BattleShipType_Enemy = new Object_Pooling(BattleShip_Enemy_Prefab, 4, "BattleshipType_Enemy");          //戦艦型のエネミーを生成
 		StarFish_Enemy = new Object_Pooling(Star_Fish_Enemy_Prefab, 20, "Star_Fish_Enemy");             //ヒトデ型エネミーを生成
 		P1_Option = new Object_Pooling(P1_Option_Prefab, 4, "Option");
 		P2_Option = new Object_Pooling(P2_Option_Prefab, 4, "P2_Option");
 		PowerUP_Item = new Object_Pooling(Item_Prefab, 10, "PowerUP_Item");
 		Boss_Middle = new Object_Pooling(Boss_Middle_Prefab, 1, "Middle_Boss");
 		Laser_Line = new Object_Pooling(Laser_Line_Prefab, 30, "Laser_Line");
-		One_Boss_Laser = new Object_Pooling(One_Boss_Laser_Prefab, 20, "One_Boss_Laser");
-		One_Boss_BousndBullet = new Object_Pooling(One_Boss_BousndBullet_Prefab, 20, "One_Boss_BousndBullet");
-		Two_Boss_Laser = new Object_Pooling(Two_Boss_Laser_Prefab, 20, "Two_Boss_Laser");
 
 
 		//effect---------------------------------------------------------------------------------------------
@@ -317,7 +290,7 @@ public class Obj_Storage : MonoBehaviour
 				CsvData.Add(line.Split(','));               //カンマごとに割り振る
 			}
 		}
-		else
+		else if(Game_Master.Number_Of_People == Game_Master.PLAYER_NUM.eTWO_PLAYER)
 		{
 			TextAsset Word = Resources.Load("CSV_Folder/" + File_name2) as TextAsset;           //csvファイルを入れる変数
 			StringReader csv = new StringReader(Word.text);                                             //読み込んだデータをcsvの変数の中に格納
@@ -351,23 +324,5 @@ public class Obj_Storage : MonoBehaviour
 	public GameObject GetMiddleBoss()
 	{
 		return Boss_Middle.Get_Obj()[0];
-	}
-
-	public GameObject GetBoss(int bossID)
-	{
-		GameObject boss = null;
-		switch (bossID)
-		{
-			case 1:
-				boss = Boss_1.Get_Obj()[0];
-				break;
-			case 2:
-				boss = Boss_2.Get_Obj()[0];
-				break;
-			default:
-				Debug.Log("引数違いますよ");
-				break;
-		}
-		return boss;
 	}
 }

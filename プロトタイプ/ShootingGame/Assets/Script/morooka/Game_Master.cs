@@ -118,8 +118,6 @@ public class Game_Master : MonoBehaviour
 	public static PLAYER_NUM Number_Of_People { get; private set; }             // 設定保存
 
 	public static int[] Is_Player_Alive { get; set; }              //プレイヤーが死んでいるかどうかの判定用
-	private One_Boss One_Bossinfo;      //前半ボスの情報
-	private Two_Boss Two_Bossinfo;      //後半ボスの情報
 	private Enemy_MiddleBoss Middle_Bossinfo;   //ビックコアの情報
 
 	private void Awake()

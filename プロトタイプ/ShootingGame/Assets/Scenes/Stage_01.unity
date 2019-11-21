@@ -1154,7 +1154,7 @@ PrefabInstance:
     - target: {fileID: 1990893988371133139, guid: cf63f313ba88a8949b8b25f0c77a26ba,
         type: 3}
       propertyPath: enemyGroups.Array.data[18].enemyType
-      value: 41
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1990893988371133139, guid: cf63f313ba88a8949b8b25f0c77a26ba,
         type: 3}

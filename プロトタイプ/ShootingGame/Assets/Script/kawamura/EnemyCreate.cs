@@ -241,12 +241,10 @@ public class EnemyCreate : MonoBehaviour
 	[SerializeField, NonEditable] private string nextEnemy;
     private EnemyGroupManage group_Script;
 	private GameObject oneBossOBj;
-	private One_Boss oneBoss_Script;
 	private GameObject mistEffectObj;
 	private ParticleSystem mistParticle;
 	private BackgroundActivation backActive_Script;
 	private GameObject twoBossObj;
-	private Two_Boss twoBoss_Script;
 	private GameObject enemy_BattleShip;
 	private bool isCreate;       //表示するときにtrueにする
 	private bool isBaculaDestroy = false;
@@ -482,14 +480,6 @@ public class EnemyCreate : MonoBehaviour
         middleBossOBj = Obj_Storage.Storage_Data.GetMiddleBoss();
         middleBoss_Script = middleBossOBj.GetComponent<Enemy_MiddleBoss>();
 
-        oneBossOBj = Obj_Storage.Storage_Data.GetBoss(1);
-        oneBoss_Script = oneBossOBj.GetComponent<One_Boss>();
-        isOneBossAlive = true;
-
-        twoBossObj = Obj_Storage.Storage_Data.GetBoss(2);
-        twoBoss_Script = twoBossObj.GetComponent<Two_Boss>();
-        isTwoBossAlive = true;
-
 		#endregion
 	}
 
@@ -547,40 +537,6 @@ public class EnemyCreate : MonoBehaviour
             Wireless_sinario.Is_using_wireless = true;
         }
 
-        //第一ボスを撃破したら間隔を詰める🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲
-        if (oneBoss_Script != null)
-        {
-            if (oneBoss_Script.Is_Dead)
-            {
-                if (isOneBossAlive)
-                {
-                    if (backActive_Script)
-                    {
-                        backActive_Script.TransparencyChangeTrigger();
-                        Wireless_sinario.Is_using_wireless = true;
-                    }
-                    isNowOneBoss = false;
-                    isOneBossAlive = false;
-                }
-            }
-        }
-
-        //第二ボスを撃破🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲🔲
-        if (twoBoss_Script != null)
-        {
-            if (twoBoss_Script.Is_Dead)
-            {
-                if (isTwoBossAlive)
-                {
-                    backActive_Script.TransparencyChangeTrigger();
-                    isNowTwoBoss = false;
-                    Wireless_sinario.Is_using_wireless = true;
-                    isTwoBossAlive = false;
-
-                }
-            }
-        }
-		
         CreateEnemyGroup_01();
     }
 
@@ -896,41 +852,12 @@ public class EnemyCreate : MonoBehaviour
                 break;
 
             case EnemyType.BATTLESHIP:
-                GameObject Battle_Ship1 = Instantiate(enemy_BattleShip, createPosR0.position, enemy_BattleShip.transform.rotation);
-                Battle_Ship1.transform.position = createPosR0.position;
-                BattleshipType_Enemy b1 = Battle_Ship1.GetComponent<BattleshipType_Enemy>();
-                b1.is_sandwich = false;
-                b1.Is_up = false;
-                //            saveEnemyObj = Obj_Storage.Storage_Data.BattleShipType_Enemy.Active_Obj();
-                //            saveEnemyObj.transform.position = pos;
-                ////GameObject Battle_Ship1 = Instantiate(enemy_BattleShip, pos, enemy_BattleShip.transform.rotation);
-                //BattleshipType_Enemy b1 = saveEnemyObj.GetComponent<BattleshipType_Enemy>();
-                //b1.is_sandwich = false;
-                //b1.Is_up = false;
                 break;
 
 			case EnemyType.BATTLESHIP_TOP:
-                GameObject Battle_Ship6 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                BattleshipType_Enemy b6 = Battle_Ship6.GetComponent<BattleshipType_Enemy>();
-                b6.Is_up = false;
-                //            saveEnemyObj = Obj_Storage.Storage_Data.BattleShipType_Enemy.Active_Obj();
-                //            saveEnemyObj.transform.position = createBattleShipPos.transform.position;
-                //            //GameObject Battle_Ship4 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                //BattleshipType_Enemy b4 = saveEnemyObj.GetComponent<BattleshipType_Enemy>();
-                //            b4.is_sandwich = true;
-                //            b4.Is_up = false;
                 break;
 
             case EnemyType.BATTLESHIP_UNDER:
-                GameObject Battle_Ship2 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                BattleshipType_Enemy b2 = Battle_Ship2.GetComponent<BattleshipType_Enemy>();
-                b2.Is_up = true;
-                //saveEnemyObj = Obj_Storage.Storage_Data.BattleShipType_Enemy.Active_Obj();
-                //saveEnemyObj.transform.position = createBattleShipPos.transform.position;
-                ////GameObject Battle_Ship5 = Instantiate(enemy_BattleShip, createBattleShipPos.transform.position, enemy_BattleShip.transform.rotation);
-                //BattleshipType_Enemy b5 = saveEnemyObj.GetComponent<BattleshipType_Enemy>();
-                //b5.is_sandwich = true;
-                //b5.Is_up = true;
                 break;
 
             case EnemyType.BATTLESHIP_TOPANDUNDER:
@@ -973,49 +900,49 @@ public class EnemyCreate : MonoBehaviour
 				break;
 
             case EnemyType.BIGCOREMK2:
-				if (groupFrameCheckDebugFlag)
-				{
-					GroupFrameCheckDebug("ボス1", groupCnt, turning_frame);
-					GroupFrameCheckDebug("ボス1後", groupCnt + 1, turning_frame + enemyGroups[groupCnt].nextGroupFrame);
-				}
-				else
-				{
-					GameObject Boss_01 = Obj_Storage.Storage_Data.Boss_1.Active_Obj();
-					Boss_01.transform.position = new Vector3(10.0f, 0.0f, 0.0f);
-					GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
-					mistSaveObj.transform.position = new Vector3(0, 0, 3);
-					mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
-					backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
-					mistParticle.Play();
-					backActive_Script.TransparencyChangeTrigger();
-					isNowOneBoss = true;
-				}
+				//if (groupFrameCheckDebugFlag)
+				//{
+				//	GroupFrameCheckDebug("ボス1", groupCnt, turning_frame);
+				//	GroupFrameCheckDebug("ボス1後", groupCnt + 1, turning_frame + enemyGroups[groupCnt].nextGroupFrame);
+				//}
+				//else
+				//{
+				//	GameObject Boss_01 = Obj_Storage.Storage_Data.Boss_1.Active_Obj();
+				//	Boss_01.transform.position = new Vector3(10.0f, 0.0f, 0.0f);
+				//	GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
+				//	mistSaveObj.transform.position = new Vector3(0, 0, 3);
+				//	mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
+				//	backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
+				//	mistParticle.Play();
+				//	backActive_Script.TransparencyChangeTrigger();
+				//	isNowOneBoss = true;
+				//}
                 break;
 
 			case EnemyType.BIGCOREMK3:
-				if (groupFrameCheckDebugFlag)
-				{
-					GroupFrameCheckDebug("ボス2", groupCnt, turning_frame);
-				}
-				else
-				{
-					GameObject Boss_02 = Obj_Storage.Storage_Data.Boss_2.Active_Obj();
-					Boss_02.transform.position = new Vector3(13.0f, 0.0f, 0.0f);
-					isNowTwoBoss = true;
+				//if (groupFrameCheckDebugFlag)
+				//{
+				//	GroupFrameCheckDebug("ボス2", groupCnt, turning_frame);
+				//}
+				//else
+				//{
+				//	GameObject Boss_02 = Obj_Storage.Storage_Data.Boss_2.Active_Obj();
+				//	Boss_02.transform.position = new Vector3(13.0f, 0.0f, 0.0f);
+				//	isNowTwoBoss = true;
 
-					//GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
-					//backActive_Script.TransparencyChangeTrigger();
-					if (isDebug)
-					{
-						GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
-						backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
+				//	//GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
+				//	//backActive_Script.TransparencyChangeTrigger();
+				//	if (isDebug)
+				//	{
+				//		GameObject mistSaveObj = Instantiate(mistEffectObj, transform.position, transform.rotation);
+				//		backActive_Script = mistSaveObj.GetComponent<BackgroundActivation>();
 
-						mistEffectObj.transform.position = new Vector3(0, 0, 3);
-						mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
-						mistParticle.Play();
-					}
-					backActive_Script.TransparencyChangeTrigger();
-				}
+				//		mistEffectObj.transform.position = new Vector3(0, 0, 3);
+				//		mistParticle = mistSaveObj.GetComponent<ParticleSystem>();
+				//		mistParticle.Play();
+				//	}
+				//	backActive_Script.TransparencyChangeTrigger();
+				//}
 				break;
 
 

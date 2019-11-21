@@ -97,21 +97,6 @@ namespace StorageReference
 				case Game_Master.OBJECT_NAME.ePOWERUP_ITEM:
 					obj = Obj_Storage.Storage_Data.PowerUP_Item.Active_Obj();
 					break;
-				case Game_Master.OBJECT_NAME.eBATTLESHIP_ENEMY_PREFAB:
-					obj = Obj_Storage.Storage_Data.BattleShipBullet.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eONE_BOSS_LASER:
-					obj = Obj_Storage.Storage_Data.One_Boss_Laser.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eONE_BOSS_BOUND:
-					obj = Obj_Storage.Storage_Data.One_Boss_BousndBullet.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eTWO_BOSS_LASER:
-					obj = Obj_Storage.Storage_Data.Two_Boss_Laser.Active_Obj();
-					break;
-				//case Game_Master.OBJECT_NAME.eMANTA_LASER:
-				//	obj = Obj_Storage
-				//	break;
 				default:
 					break;
 			}
@@ -199,18 +184,6 @@ namespace StorageReference
 					break;
 				case Game_Master.OBJECT_NAME.ePOWERUP_ITEM:
 					obj = Obj_Storage.Storage_Data.PowerUP_Item.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eBATTLESHIP_ENEMY_PREFAB:
-					obj = Obj_Storage.Storage_Data.BattleShipBullet.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eONE_BOSS_LASER:
-					obj = Obj_Storage.Storage_Data.One_Boss_Laser.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eONE_BOSS_BOUND:
-					obj = Obj_Storage.Storage_Data.One_Boss_BousndBullet.Active_Obj();
-					break;
-				case Game_Master.OBJECT_NAME.eTWO_BOSS_LASER:
-					obj = Obj_Storage.Storage_Data.Two_Boss_Laser.Active_Obj();
 					break;
 				default:
 					break;

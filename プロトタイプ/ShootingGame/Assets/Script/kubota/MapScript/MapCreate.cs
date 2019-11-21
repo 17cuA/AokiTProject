@@ -15,13 +15,7 @@ public class MapCreate : MonoBehaviour
 
 	void Start()
     {
-		if(SceneManager.GetActiveScene().name == "Stage_01" 
-			|| SceneManager.GetActiveScene().name == "Stage_02" 
-			|| SceneManager.GetActiveScene().name == "Stage_03" 
-			|| SceneManager.GetActiveScene().name == "Stage_04"
-			 || SceneManager.GetActiveScene().name == "Stage_05"
-			  || SceneManager.GetActiveScene().name == "Stage_06"
-			   || SceneManager.GetActiveScene().name == "Stage_07")
+		if(SceneManager.GetActiveScene().name == "Stage_01" )
 		{
 			SC = GetComponent<SceneChanger>();
 			//OC = GetComponent<Object_Creation>();
@@ -45,11 +39,8 @@ public class MapCreate : MonoBehaviour
 						GameObject Player_obj = Obj_Storage.Storage_Data.Player.Active_Obj();
 						if (Game_Master.Number_Of_People == Game_Master.PLAYER_NUM.eONE_PLAYER) Player_obj.transform.position = new Vector3(-2, 0, 0);
 						else if (Game_Master.Number_Of_People == Game_Master.PLAYER_NUM.eTWO_PLAYER) Player_obj.transform.position = new Vector3(-2, 2, 0);
-						//Player_obj.transform.position = Obj_Storage.Storage_Data.pos;
 						break;
 					case "2":
-						//GameObject Enemy_obj = Obj_Storage.Storage_Data.Enemy1.Active_Obj();
-						//Enemy_obj.transform.position = Obj_Storage.Storage_Data.pos;
 						break;
 					case "3":
 						GameObject Player_obj2 = Obj_Storage.Storage_Data.Player_2.Active_Obj();
