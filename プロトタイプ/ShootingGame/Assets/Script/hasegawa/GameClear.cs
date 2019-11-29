@@ -49,6 +49,7 @@ namespace Costom
 			if (!resultDisplay) { resultDisplay = FindObjectOfType<ResultDisplay>(); }
 			// ランキング表示用クラスが設定されていなかったら取得する
 			if (!rankingDisplay) { rankingDisplay = FindObjectOfType<RankingDisplay>(); }
+			rankingDisplay.gameObject.SetActive(false);
 			// キャンバスの取得
 			if (!anyCanvas) { anyCanvas = FindObjectOfType<Canvas>(); }
 			// PressButtonの生成
@@ -66,8 +67,6 @@ namespace Costom
 		{
 			// リザルト画面の表示非表示設定
 			resultDisplay.gameObject.SetActive(displayInfo == EDisplayInformation.eResult || displayInfo == EDisplayInformation.eResultToRanking);
-			// ランキング画面の表示非表示設定
-			rankingDisplay.gameObject.SetActive(displayInfo == EDisplayInformation.eRanking || displayInfo == EDisplayInformation.eRankingFromResult);
 			// PressButtonの点滅
 			if (displayInfo == EDisplayInformation.eResult || displayInfo == EDisplayInformation.eResultToRanking || (rankingDisplay.IsDecision1P && rankingDisplay.IsDecision2P))
 			{
@@ -82,35 +81,10 @@ namespace Costom
 			{
 				pressButtonDisplayParent.SetActive(false);
 			}
-			// 入力を受けたらScene移行
-			if ((Input.anyKeyDown && rankingDisplay.IsDecision1P && rankingDisplay.IsDecision2P && displayInfo == EDisplayInformation.eRanking) && !Input.GetKey(KeyCode.LeftAlt) && !Input.GetKey(KeyCode.LeftAlt) && !Input.GetKey(KeyCode.F4) && !Input.GetKey(KeyCode.LeftControl))
-			{
-				Ranking_Strage.Strage_Data.Ranking_Save();
-				Scene_Manager.Manager.Screen_Transition_To_Title();
-			}
-			// リザルトの時に入力を受けたら画面の暗転に移る
+			// リザルトの時に入力を受けたらシーン移行
 			if (displayInfo == EDisplayInformation.eResult && Input.anyKeyDown)
 			{
-				displayInfo = EDisplayInformation.eResultToRanking;
-			}
-			// 画面切り替え
-			if (displayInfo == EDisplayInformation.eResultToRanking)
-			{
-				displayPlane.color += new Color(0f, 0f, 0f, 5f / 60f);
-				if (displayPlane.color.a >= 1f)
-				{
-					displayPlane.color = new Color(displayPlane.color.r, displayPlane.color.g, displayPlane.color.b, 1f);
-					displayInfo = EDisplayInformation.eRankingFromResult;
-				}
-			}
-			else if (displayInfo == EDisplayInformation.eRankingFromResult)
-			{
-				displayPlane.color -= new Color(0f, 0f, 0f, 5f / 60f);
-				if (displayPlane.color.a <= 0f)
-				{
-					displayPlane.color = new Color(displayPlane.color.r, displayPlane.color.g, displayPlane.color.b, 0f);
-					displayInfo = EDisplayInformation.eRanking;
-				}
+				Scene_Manager.Manager.Screen_Transition_To_Title();
 			}
 		}
 	}
