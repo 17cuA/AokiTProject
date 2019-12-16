@@ -1184,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 1990893988371133139, guid: cf63f313ba88a8949b8b25f0c77a26ba,
         type: 3}
       propertyPath: enemyGroups.Array.data[17].nextGroupFrame
-      value: 1800
+      value: 1700
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf63f313ba88a8949b8b25f0c77a26ba, type: 3}

@@ -235,7 +235,7 @@ public class EnemyCreate : MonoBehaviour
 	//
 	//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	[SerializeField, NonEditable] private int PreviousCount = 0;
-	public int frameCnt = 0;    //フレームカウント：これの値で生成のタイミングをはかる
+	[SerializeField, NonEditable] public int frameCnt = 0;    //フレームカウント：これの値で生成のタイミングをはかる
 	[SerializeField, NonEditable] private int groupCnt = 1;    //画面に出す群れのカウント
 	[SerializeField, NonEditable] private int turning_frame = 180;
 	[SerializeField, NonEditable] private string nextEnemy;
