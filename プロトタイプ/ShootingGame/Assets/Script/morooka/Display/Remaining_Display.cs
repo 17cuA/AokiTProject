@@ -100,7 +100,7 @@ public class Remaining_Display : MonoBehaviour
 					obj.transform.parent = transform;
 				}
 				// プレイヤーのデータを保存
-				Player_Data_2P = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<Player2>();
+				//Player_Data_2P = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<Player2>();
 				Remaining_Num_2P = Player_Data_2P.Remaining;
 
 				// リソースからアイコン用の画像取得

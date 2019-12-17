@@ -69,18 +69,18 @@ public class FollowPositions : MonoBehaviour
 					savePos = playerObj.transform.position;
 				}
 			}
-			else if (isFollow2P)
-			{
-				if (GameObject.Find("Player_2"))
-				{
-					playerObj = Obj_Storage.Storage_Data.GetPlayer2();/*GameObject.Find("Player_2")*/;
-					pl2 = playerObj.GetComponent<Player2>();
-					check = true;
-					defCheck = true;
-					pos = playerObj.transform.position;
-					savePos = playerObj.transform.position;
-				}
-			}
+			//else if (isFollow2P)
+			//{
+			//	if (GameObject.Find("Player_2"))
+			//	{
+			//		playerObj = Obj_Storage.Storage_Data.GetPlayer2();/*GameObject.Find("Player_2")*/;
+			//		pl2 = playerObj.GetComponent<Player2>();
+			//		check = true;
+			//		defCheck = true;
+			//		pos = playerObj.transform.position;
+			//		savePos = playerObj.transform.position;
+			//	}
+			//}
 		}
 
 		if (pos == playerObj.transform.position)

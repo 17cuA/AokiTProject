@@ -59,7 +59,6 @@ public class DebugManager : MonoBehaviour
 				OperationDebug("全部のコライダーを外した","GM");
 				isColliderEnabled = false;
 				var player1 = Obj_Storage.Storage_Data.GetPlayer();
-                var player2 = Obj_Storage.Storage_Data.GetPlayer2();
 
 			}
 			else
@@ -67,7 +66,6 @@ public class DebugManager : MonoBehaviour
 				OperationDebug("外したのコライダーを元に戻した", "GM");
 				isColliderEnabled = true;
 				var player1 = Obj_Storage.Storage_Data.GetPlayer();
-                var player2 = Obj_Storage.Storage_Data.GetPlayer2();
 
 			}
 		}
@@ -95,10 +93,10 @@ public class DebugManager : MonoBehaviour
         if(Input.GetKeyDown(AddRemainingKey))
         {
             var player1 = Obj_Storage.Storage_Data.GetPlayer();
-            var player2 = Obj_Storage.Storage_Data.GetPlayer2();
+            //var player2 = Obj_Storage.Storage_Data.GetPlayer2();
 
             player1.GetComponent<Player1>().Remaining = 9;
-            player2.GetComponent<Player2>().Remaining = 9;
+            //player2.GetComponent<Player2>().Remaining = 9;
         }
 
         if(Input.GetKeyDown(ResponPlayerKey))
@@ -107,19 +105,19 @@ public class DebugManager : MonoBehaviour
                 return;
 
             var player1 = Obj_Storage.Storage_Data.GetPlayer();
-            var player2 = Obj_Storage.Storage_Data.GetPlayer2();
+            //var player2 = Obj_Storage.Storage_Data.GetPlayer2();
 
-            if(player1.activeSelf && !player2.activeSelf)
-            {
-                player2.SetActive(true);
-                player2.GetComponent<Player2>().ResponPreparation(bonusRemaining);
+            //if(player1.activeSelf && !player2.activeSelf)
+            //{
+            //    player2.SetActive(true);
+            //    player2.GetComponent<Player2>().ResponPreparation(bonusRemaining);
 
-            }
-            else if(player2.activeSelf && !player1.activeSelf)
-            {
-                player1.SetActive(true);
-                player1.GetComponent<Player1>().ResponPreparation(bonusRemaining);
-            }
+            //}
+            //else if(player2.activeSelf && !player1.activeSelf)
+            //{
+            //    player1.SetActive(true);
+            //    player1.GetComponent<Player1>().ResponPreparation(bonusRemaining);
+            //}
         }
 
 		updateTimer += Time.deltaTime;

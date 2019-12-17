@@ -18,63 +18,40 @@ public class Obj_Storage : MonoBehaviour
 	//マップ作製に使うプレハブ
 	//リソースフォルダから取得するため、インスペクターは使わない
 	private GameObject Player_Prefab;                           //プレイヤーのプレハブ
-	private GameObject player_2_Prefab;                         //プレイヤー2のプレハブ
 	private GameObject Player_Missile1;                         //プレイヤー1のミサイルプレハブ
-	private GameObject Player_Missile2;                         //プレイヤー２のミサイルプレハブ
 	private GameObject Bullet_Prefab_P;                         //弾のPrefab情報
 	private GameObject BulletPrefab_P2;            //２P用の弾プレハブ情報
 	private GameObject BulletPrefab_Option_P1;         //オプション用の球プレハブ情報１P用
-	private GameObject BulletPrefab_Option_P2;          //オプション用の弾プレハブ２P用
-	private GameObject Bullet_Prefab_E;                         //エネミーの弾のPrefab情報
-	private GameObject Bullet_Prefab_BattleShip;        // バトルシップタイプの弾のPrefab情報
 	private GameObject Beam_Bullet_E_Prefab;                    //エネミーのビーム型バレットのプレハブ
     private GameObject SmallBeam_Bullet_E_Prefab;               //エネミーの小さいビーム型バレットのプレハブ
     private GameObject UfoType_Enemy_Prefab;                // UFO型エネミーのプレハブ
 	private GameObject ClamChowderType_Enemy_Prefab;    // 貝型エネミーのプレハブ
-	private GameObject OctopusType_Enemy_Prefab;            // タコ型エネミーのプレハブ
-	private GameObject BeelzebubType_Enemy_Prefab;      // ハエ型エネミーのプレハブ
-	private GameObject Star_Fish_Enemy_Prefab;          //ヒトデ型のエネミーのプレハブ
 	private GameObject P1_Option_Prefab;                            //オプションのプレハブ
-	private GameObject P2_Option_Prefab;                        //2P用のオプションのプレハブ
 	private GameObject Item_Prefab;                             //パワーアップのアイテムを入れえるための処理
 
 	//-----------------------------------------------------------------------------------
 	private GameObject[] Effects_Prefab = new GameObject[17];  //particleのプレハブ
 	//---------------------------------------------------------------------------------
 	private GameObject Boss_Middle_Prefab;                      //中ボスのプレハブ
-	private GameObject Laser_Line_Prefab;               // レーザーのプレハブ
+	private GameObject Laser_Line_Prefab;						// レーザーのプレハブ
 
 	//実際に作られたオブジェクト
 	public Object_Pooling Enemy1;
 	public Object_Pooling Medium_Size_Enemy1;
 	public Object_Pooling Player;
-	public Object_Pooling Player_2;
 	public Object_Pooling PlayerBullet;
-	public Object_Pooling Player2Bullet;
 	public Object_Pooling P1_OptionBullet;
-	public Object_Pooling P2_OptionBullet;
 	public Object_Pooling PlayerMissile;
-	public Object_Pooling PlayerMissile2;
-	public Object_Pooling PlayerMissile_TowWay;
-	public Object_Pooling EnemyBullet;
 	public Object_Pooling Beam_Bullet_E;
     public Object_Pooling UfoType_Enemy;
 	public Object_Pooling ClamChowderType_Enemy;
-	public Object_Pooling StarFish_Enemy;
 	public Object_Pooling P1_Option;
-	public Object_Pooling P2_Option;
 	public Object_Pooling PowerUP_Item;
 	public Object_Pooling Boss_Middle;
 	public Object_Pooling Laser_Line;
-																  //effect関係-----------------------------------------------------
+	//effect関係-----------------------------------------------------
 	public Object_Pooling[] Effects = new Object_Pooling[17];
-	//マップの作製時に使う処理
-	public Vector3 pos;                                        //マップを作成するときの位置情報取得用
-	private string File_name = "E_Pattern";                     //csvファイルの名前
-	private string File_name2 = "E_Pattern2";
-	public List<string[]> CsvData = new List<string[]>();      //csvファイルの中身を入れる変数
-	private int column;                                         //配列の列を入れる変数
-
+	//サウンド関係-----------------------------------------------------
 	public AudioClip[] audio_se = new AudioClip[29];    //ＳＥを読み込むための配列
 	public AudioClip[] audio_voice = new AudioClip[26]; //VOICEを読み込むための配列
 
@@ -114,24 +91,15 @@ public class Obj_Storage : MonoBehaviour
 	{
 
 		Player_Prefab = Resources.Load("Player/Player") as GameObject;
-		player_2_Prefab = Resources.Load("Player/Player2") as GameObject;
 		Bullet_Prefab_P = Resources.Load("Bullet/Player_Bullet_1P") as GameObject;
 		BulletPrefab_P2 = Resources.Load("Bullet/Player_Bullet_2P") as GameObject;
 		BulletPrefab_Option_P1 = Resources.Load("Bullet/Option_Bullet_1P") as GameObject;
-		BulletPrefab_Option_P2 = Resources.Load("Bullet/Option_Bullet_2P") as GameObject;
 		Player_Missile1 = Resources.Load("Bullet/Player_Missile") as GameObject;
-		Player_Missile2 = Resources.Load("Bullet/Player_Missile2") as GameObject;
-		Bullet_Prefab_E = Resources.Load("Bullet/Enemy_Bullet") as GameObject;
-		Bullet_Prefab_BattleShip = Resources.Load("Bullet/CannonBullet") as GameObject;
 		Beam_Bullet_E_Prefab = Resources.Load("Bullet/Beam_Bullet") as GameObject;
         SmallBeam_Bullet_E_Prefab= Resources.Load("Bullet/SmallBeam_Bullet") as GameObject;
         UfoType_Enemy_Prefab = Resources.Load("Enemy/Enemy_UFO") as GameObject;
 		ClamChowderType_Enemy_Prefab = Resources.Load("Enemy/ClamChowderType_Enemy") as GameObject;
-		OctopusType_Enemy_Prefab = Resources.Load("Enemy/OctopusType_Enemy") as GameObject; ;
-		BeelzebubType_Enemy_Prefab = Resources.Load("Enemy/BeelzebubType_Enemy") as GameObject;
-		Star_Fish_Enemy_Prefab = Resources.Load("Enemy/Enemy_hitode_type") as GameObject;       //ヒトデ型の敵のロード
 		P1_Option_Prefab = Resources.Load("Option/Option") as GameObject;       //1Pオプションのロード
-		P2_Option_Prefab = Resources.Load("Option/Option_2P") as GameObject;       //2Pオプションのロード
 
 		Item_Prefab = Resources.Load("Item/Item_Test") as GameObject;        //アイテムのロード
 		Boss_Middle_Prefab = Resources.Load("Enemy/Enemy_MiddleBoss_Father") as GameObject;		//中ボス
@@ -201,12 +169,12 @@ public class Obj_Storage : MonoBehaviour
 		audio_voice[10] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_011");       //アステロイド地帯の説明
 		audio_voice[11] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_012");       //了解（ラジャー）
 		audio_voice[12] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_13");       //アイテム使用時のボイス（スピードアップ）
-		audio_voice[13] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_14");       //アイテム使用時のボイス（ミサイル）
-		audio_voice[14] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_15");       //アイテム使用時のボイス（ダブル）
-		audio_voice[15] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_16");       //アイテム使用時のボイス（レーザー）
+		audio_voice[13] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_14");				//アイテム使用時のボイス（ミサイル）
+		audio_voice[14] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_15");				//アイテム使用時のボイス（ダブル）
+		audio_voice[15] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_16");				//アイテム使用時のボイス（レーザー）
 		audio_voice[16] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_SE_Option_Multiple");     //アイテム使用時のボイス（オプション）
 		audio_voice[17] = Resources.Load<AudioClip>("Sound/VOICE/gradius_SE_PowerUp_Shield");       //アイテム使用時のボイス（フォースフィールド）
-		audio_voice[18] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_19");       //アイテム使用時のボイス（マックススピード）
+		audio_voice[18] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_19");				//アイテム使用時のボイス（マックススピード）
 		audio_voice[19] = Resources.Load<AudioClip>("Sound/VOICE/Shooting_Voice_20_initial");       //アイテム使用時のボイス（イニットスピード）
 		audio_voice[20] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_013");           //モアイ1
 		audio_voice[21] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_014");           //モアイ2
@@ -214,7 +182,7 @@ public class Obj_Storage : MonoBehaviour
 		audio_voice[23] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_016");           //前半ボス後更新２
 		audio_voice[24] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_017");           //了解（落ち着いた感じ）
 		audio_voice[25] = Resources.Load<AudioClip>("Sound/VOICE/MANESIUS_Scenario_018");           //敵の自爆
-                                                                                                    //--------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------
         enemy_UFO_Group_NoneShot_prefab = Resources.Load("Enemy/Enemy_UFO_Group_NoneShot") as GameObject;
         enemy_ClamChowder_Group_Two_Top_prefab = Resources.Load("Enemy/Enemy_ClamChowder_Group_Two_Top") as GameObject;
         enemy_ClamChowder_Group_Two_Under_prefab = Resources.Load("Enemy/Enemy_ClamChowder_Group_Two_Under") as GameObject;
@@ -232,20 +200,13 @@ public class Obj_Storage : MonoBehaviour
         //--------------------------------------------------------------------------------------------------------
 
         Player = new Object_Pooling(Player_Prefab, 1, "Player");                        //プレイヤー生成
-		Player_2 = new Object_Pooling(player_2_Prefab, 1, "Player_2");                  //プレイヤー2生成
 		PlayerBullet = new Object_Pooling(Bullet_Prefab_P, 5, "Player1_Bullet");         //プレイヤーのバレットを生成
-		Player2Bullet = new Object_Pooling(BulletPrefab_P2, 5, "Player2_Bullet");
 		P1_OptionBullet = new Object_Pooling(BulletPrefab_Option_P1, 10, "Option_Bullet_1P");
-		P2_OptionBullet = new Object_Pooling(BulletPrefab_Option_P2, 10, "Option_Bullet_2P");
 		PlayerMissile = new Object_Pooling(Player_Missile1, 8, "Player_Missile");        //プレイヤーのミサイルの生成
-		PlayerMissile2 = new Object_Pooling(Player_Missile2, 8, "Player_Missile");      //プレイヤー２のミサイルの生成
-		EnemyBullet = new Object_Pooling(Bullet_Prefab_E, 10, "Enemy_Bullet");          //エネミーのバレットを生成
 		Beam_Bullet_E = new Object_Pooling(Beam_Bullet_E_Prefab, 10, "Enemy_Beam_Bullet");      // エネミーのビーム型バレットを生成
 		UfoType_Enemy = new Object_Pooling(UfoType_Enemy_Prefab, 1, "UfoType_Enemy");       // UFO型エネミーを生成
 		ClamChowderType_Enemy = new Object_Pooling(ClamChowderType_Enemy_Prefab, 1, "ClamChowderType_Enemy");       // 貝型エネミーを生成
-		StarFish_Enemy = new Object_Pooling(Star_Fish_Enemy_Prefab, 20, "Star_Fish_Enemy");             //ヒトデ型エネミーを生成
 		P1_Option = new Object_Pooling(P1_Option_Prefab, 4, "Option");
-		P2_Option = new Object_Pooling(P2_Option_Prefab, 4, "P2_Option");
 		PowerUP_Item = new Object_Pooling(Item_Prefab, 10, "PowerUP_Item");
 		Boss_Middle = new Object_Pooling(Boss_Middle_Prefab, 1, "Middle_Boss");
 		Laser_Line = new Object_Pooling(Laser_Line_Prefab, 30, "Laser_Line");
@@ -280,26 +241,7 @@ public class Obj_Storage : MonoBehaviour
         enemy_ClamChowder_Group_Five_NoItem = new Object_Pooling(enemy_ClamChowder_Group_Five_NoItem_prefab, 1, "enemy_ClamChowder_Group_Five_NoItem");
         //9月13日追加
         //-----------------------------------------------------------------------------------------------------
-        if (Game_Master.Number_Of_People == Game_Master.PLAYER_NUM.eONE_PLAYER)
-		{
-			TextAsset Word = Resources.Load("CSV_Folder/" + File_name) as TextAsset;            //csvファイルを入れる変数
-			StringReader csv = new StringReader(Word.text);                                         //読み込んだデータをcsvの変数の中に格納
-			while (csv.Peek() > -1)
-			{
-				string line = csv.ReadLine();
-				CsvData.Add(line.Split(','));               //カンマごとに割り振る
-			}
-		}
-		else if(Game_Master.Number_Of_People == Game_Master.PLAYER_NUM.eTWO_PLAYER)
-		{
-			TextAsset Word = Resources.Load("CSV_Folder/" + File_name2) as TextAsset;           //csvファイルを入れる変数
-			StringReader csv = new StringReader(Word.text);                                             //読み込んだデータをcsvの変数の中に格納
-			while (csv.Peek() > -1)
-			{
-				string line = csv.ReadLine();
-				CsvData.Add(line.Split(','));                       //カンマごとに割り振る
-			}
-		}
+
 	}
 
 
@@ -311,10 +253,6 @@ public class Obj_Storage : MonoBehaviour
 	public GameObject GetPlayer()
 	{
 		return Player.Get_Obj()[0];
-	}
-	public GameObject GetPlayer2()
-	{
-		return Player_2.Get_Obj()[0];
 	}
 	public GameObject GetOption()
 	{

@@ -238,9 +238,9 @@ public class Game_Master : MonoBehaviour
 		}
 		else
 		{
-			var player2 = Obj_Storage.Storage_Data.GetPlayer2();
-			player2.SetActive(true);
-			player2.GetComponent<Player2>().ResponPreparation(5);
+			//var player2 = Obj_Storage.Storage_Data.GetPlayer2();
+			//player2.SetActive(true);
+			//player2.GetComponent<Player2>().ResponPreparation(5);
 			player1.SetActive(true);
 			player1.GetComponent<Player1>().ResponPreparation(5);
 		}

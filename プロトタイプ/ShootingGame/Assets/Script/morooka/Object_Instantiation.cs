@@ -43,13 +43,13 @@ namespace StorageReference
                 #endregion
                     //新しく追加した部分-----------------------------
                 case Game_Master.OBJECT_NAME.ePLAYER2_BULLET:
-                    obj = Obj_Storage.Storage_Data.Player2Bullet.Active_Obj();
+                    //obj = Obj_Storage.Storage_Data.Player2Bullet.Active_Obj();
                     break;
                 case Game_Master.OBJECT_NAME.eP1_OPTION_BULLET:
                     obj = Obj_Storage.Storage_Data.P1_OptionBullet.Active_Obj();
                     break;
 				case Game_Master.OBJECT_NAME.eP2_OPTION_BULLET:
-					obj = Obj_Storage.Storage_Data.P2_OptionBullet.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.P2_OptionBullet.Active_Obj();
 					break;
 
 				//--------------------------------------------
@@ -58,12 +58,12 @@ namespace StorageReference
 					obj = Obj_Storage.Storage_Data.PlayerMissile.Active_Obj();
 					break;
 				case Game_Master.OBJECT_NAME.ePLAYER_MISSILE2:
-					obj = Obj_Storage.Storage_Data.PlayerMissile2.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.PlayerMissile2.Active_Obj();
 					break;
 				#endregion
 				#region
 				case Game_Master.OBJECT_NAME.ePLAYER_TowWay:
-					obj = Obj_Storage.Storage_Data.PlayerMissile_TowWay.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.PlayerMissile_TowWay.Active_Obj();
 					break;
 				#endregion
 				#region Plauyer_Laser
@@ -73,7 +73,7 @@ namespace StorageReference
 				#endregion
 				#region Enemy_Bullet
 				case Game_Master.OBJECT_NAME.eENEMY_BULLET:
-					obj = Obj_Storage.Storage_Data.EnemyBullet.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.EnemyBullet.Active_Obj();
 					break;
 				#endregion
 				#region Enemy_Beam
@@ -134,13 +134,13 @@ namespace StorageReference
 				#endregion
 				//新しく追加した部分-----------------------------
 				case Game_Master.OBJECT_NAME.ePLAYER2_BULLET:
-					obj = Obj_Storage.Storage_Data.Player2Bullet.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.Player2Bullet.Active_Obj();
 					break;
 				case Game_Master.OBJECT_NAME.eP1_OPTION_BULLET:
 					obj = Obj_Storage.Storage_Data.P1_OptionBullet.Active_Obj();
 					break;
 				case Game_Master.OBJECT_NAME.eP2_OPTION_BULLET:
-					obj = Obj_Storage.Storage_Data.P2_OptionBullet.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.P2_OptionBullet.Active_Obj();
 					break;
 
 				//--------------------------------------------
@@ -151,7 +151,7 @@ namespace StorageReference
 				#endregion
 				#region
 				case Game_Master.OBJECT_NAME.ePLAYER_TowWay:
-					obj = Obj_Storage.Storage_Data.PlayerMissile_TowWay.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.PlayerMissile_TowWay.Active_Obj();
 					break;
 				#endregion
 				#region Plauyer_Laser
@@ -161,7 +161,7 @@ namespace StorageReference
 				#endregion
 				#region Enemy_Bullet
 				case Game_Master.OBJECT_NAME.eENEMY_BULLET:
-					obj = Obj_Storage.Storage_Data.EnemyBullet.Active_Obj();
+					//obj = Obj_Storage.Storage_Data.EnemyBullet.Active_Obj();
 					break;
 				#endregion
 				#region Enemy_Beam

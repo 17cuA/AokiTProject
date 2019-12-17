@@ -44,7 +44,7 @@ public class Find_Angle : MonoBehaviour
 
 		if (player2Obj == null && isPlayer2Active)
 		{
-			player2Obj = Obj_Storage.Storage_Data.GetPlayer2();
+			//player2Obj = Obj_Storage.Storage_Data.GetPlayer2();
 
 		}
 		if (playerObj)

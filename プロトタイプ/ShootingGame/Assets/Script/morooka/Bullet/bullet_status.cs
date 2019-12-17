@@ -52,7 +52,7 @@ public class bullet_status : MonoBehaviour
 				Player_Number = 1;
 				break;
 			case Type.Player2:
-				P2 = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<Player2>();
+				//P2 = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<Player2>();
 				Player_Number = 2;
 				break;
 			case Type.Player1_Option:

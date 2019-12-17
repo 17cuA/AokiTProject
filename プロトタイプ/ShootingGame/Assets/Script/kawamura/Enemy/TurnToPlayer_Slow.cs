@@ -128,7 +128,7 @@ public class TurnToPlayer_Slow : character_status
 				}
 				else if(transform.position.y < 0)
 				{
-					playerObj = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<character_status>();
+					//playerObj = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<character_status>();
 				}
 			}
 		}
@@ -140,13 +140,13 @@ public class TurnToPlayer_Slow : character_status
 				// 1P のとき
 				if (Obj_Storage.Storage_Data.GetPlayer().GetComponent<character_status>() == playerObj)
 				{
-					playerObj = playerObj = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<character_status>();
+					//playerObj = playerObj = Obj_Storage.Storage_Data.GetPlayer2().GetComponent<character_status>();
 				}
 				// 2Pのとき
-				if (Obj_Storage.Storage_Data.GetPlayer2().GetComponent<character_status>() == playerObj)
-				{
-					playerObj = playerObj = Obj_Storage.Storage_Data.GetPlayer().GetComponent<character_status>();
-				}
+				//if (Obj_Storage.Storage_Data.GetPlayer2().GetComponent<character_status>() == playerObj)
+				//{
+				//	playerObj = playerObj = Obj_Storage.Storage_Data.GetPlayer().GetComponent<character_status>();
+				//}
 			}
 		}
 

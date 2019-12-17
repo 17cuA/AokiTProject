@@ -26,8 +26,8 @@ public class SceneChanger : MonoBehaviour
 			Player = Obj_Storage.Storage_Data.GetPlayer();
 			P1 = Player.GetComponent<Player1>();
 
-			Player = Obj_Storage.Storage_Data.GetPlayer2();
-			P2 = Player.GetComponent<Player2>();
+			//Player = Obj_Storage.Storage_Data.GetPlayer2();
+			//P2 = Player.GetComponent<Player2>();
 		}
 		//----------------------------------------------------
 	}

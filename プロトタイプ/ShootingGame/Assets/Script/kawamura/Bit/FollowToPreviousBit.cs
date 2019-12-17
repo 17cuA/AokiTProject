@@ -131,8 +131,8 @@ public class FollowToPreviousBit : MonoBehaviour
 			else if (isFollow2P)
 			{
 				//プレイヤーがいたら入れる
-				playerObj = Obj_Storage.Storage_Data.GetPlayer2();
-                pl2 = playerObj.GetComponent<Player2>();
+				//playerObj = Obj_Storage.Storage_Data.GetPlayer2();
+                //pl2 = playerObj.GetComponent<Player2>();
 				//isMove = true;
 				//playerPos[cnt] = playerObj.transform;
 				transform.position = playerObj.transform.position;
