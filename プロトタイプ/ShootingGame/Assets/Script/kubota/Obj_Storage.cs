@@ -131,8 +131,8 @@ public class Obj_Storage : MonoBehaviour
 		audio_se[8] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_Small2");    //敵の爆発音
 		audio_se[9] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_Moderate");  //ボスの爆発音
 		audio_se[10] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_OptionCatch");           //ドロップしたオプションの回収
-		audio_se[16] = Resources.Load<AudioClip>("Sound/Teacher_SE/manesius_manesius_kettei_neo");          //パワーアップの音(使用しない)
-		audio_se[17] = Resources.Load<AudioClip>("Sound/Teacher_SE/gradius_SE_Player_Laser");   //レーザーの発射音
+		audio_se[16] = Resources.Load<AudioClip>("Sound/Teacher_SE/manesius_manesius_kettei_neo");          //パワーアップの音
+		audio_se[17] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Player_Laser");   //レーザーの発射音
 		audio_se[18] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_1(Small)");     //小型爆発
 		audio_se[19] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_2(senkan)");    //戦艦タイプの爆発音
 		audio_se[20] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Self_destruction");      //プレイヤーの死亡時の音
