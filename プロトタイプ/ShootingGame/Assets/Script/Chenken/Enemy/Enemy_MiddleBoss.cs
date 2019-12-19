@@ -117,7 +117,7 @@ public class Enemy_MiddleBoss : character_status
 		base.HP_Setting();
 
 		player = GameObject.Find("Player").transform.GetChild(0).transform;
-		if(player.gameObject.activeSelf)
+		if(!player.gameObject.activeSelf)
 		{
 			player = GameObject.Find("Player_2").transform.GetChild(0).transform;
 		}

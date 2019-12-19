@@ -124,13 +124,6 @@ public class Bit_Formation_3 : MonoBehaviour
 
 		}
 
-		if (player2Obj == null)
-		{
-			player2Obj = GameObject.Find("Player_2");
-
-			pl2 = player2Obj.GetComponent<Player2>();
-
-		}
 
 		//生成された時の処理
 		if (isborn)
@@ -378,6 +371,7 @@ public class Bit_Formation_3 : MonoBehaviour
 			if (col.gameObject.name == "Player")
 			{
 				SE_Manager.SE_Obj.Maltiple_Catch_SE(Obj_Storage.Storage_Data.audio_se[10]);
+				Voice_Manager.VOICE_Obj.Maltiple_Active_Voice(Obj_Storage.Storage_Data.audio_voice[16]);
 
 				int i = 0;
 				while (i < pl1.Maltiple_Catch.Length)
@@ -563,6 +557,8 @@ public class Bit_Formation_3 : MonoBehaviour
 				//option_Particle.Stop();
 				b_Shot.isShot = true;
 				SE_Manager.SE_Obj.Maltiple_Catch_SE(Obj_Storage.Storage_Data.audio_se[10]);
+				Voice_Manager.VOICE_Obj.Maltiple_Active_Voice(Obj_Storage.Storage_Data.audio_voice[16]);
+
 				int i = 0;
 				while (i < pl2.Maltiple_Catch.Length)
 				{

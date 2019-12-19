@@ -82,8 +82,8 @@ public class Bit_Shot : MonoBehaviour
 		}
 		if (player2Obj == null)
 		{
-			player2Obj = GameObject.Find("Player_2");
-			pl2 = player2Obj.GetComponent<Player2>();
+			//player2Obj = GameObject.Find("Player_2");
+			//pl2 = player2Obj.GetComponent<Player2>();
 		}
 
 		//if(pl1.bullet_Type == Player1.Bullet_Type.Laser)

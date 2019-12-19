@@ -123,23 +123,14 @@ public class Obj_Storage : MonoBehaviour
 		Effects_Prefab[15] = Resources.Load<GameObject>("Effects/Attachment/A003_2P");      //2Pパワーアップエフェクト
 		Effects_Prefab[16] = Resources.Load<GameObject>("Effects/Explosion/E011");      //ミサイルの爆発
 
-		audio_se[0] = Resources.Load<AudioClip>("Sound/Teacher_SE/bacura_hit");             //バキュラに当たった時の高い音用
-		audio_se[1] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_Small2");    //隕石の爆発音
 		audio_se[2] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Player_BulletMode_Change");   //ラピッドとバーストの切り替え
-		audio_se[3] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Explosion_Scream");               //叫ぶ声
 		audio_se[4] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Player_Bullet");       //プレイヤーバレット音
 		audio_se[5] = Resources.Load<AudioClip>("Sound/Teacher_SE/menesius_cupcel5 t");     //アイテム取得音(バー移動)
 		audio_se[6] = Resources.Load<AudioClip>("Sound/Teacher_SE/manesius_manesius_kettei");   //アイテム使用パワーアップ音(ステータス変化)
 		audio_se[7] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Bullet_Hit");         //コアシールドヒット音
 		audio_se[8] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_Small2");    //敵の爆発音
 		audio_se[9] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_Moderate");  //ボスの爆発音
-		//装備セレクトで使用するもの------------------------------------------------------
 		audio_se[10] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_OptionCatch");           //ドロップしたオプションの回収
-		audio_se[11] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Explosion_5(Moyai)");           //モアイの爆発
-		audio_se[12] = Resources.Load<AudioClip>("Sound/SE/manesius_manesius_kettei_neo");          //ダブルの声使ってない
-		audio_se[13] = Resources.Load<AudioClip>("Sound/SE/manesius_manesius_kettei_neo");     //リップルレーザーの声使ってない
-		audio_se[14] = Resources.Load<AudioClip>("Sound/SE/manesius_manesius_kettei_neo");          //オプションの声使ってない
-		audio_se[15] = Resources.Load<AudioClip>("Sound/SE/manesius_manesius_kettei_neo");     //フォースフィールド（シールド）使ってない
 		audio_se[16] = Resources.Load<AudioClip>("Sound/Teacher_SE/manesius_manesius_kettei_neo");          //パワーアップの音(使用しない)
 		audio_se[17] = Resources.Load<AudioClip>("Sound/Teacher_SE/gradius_SE_Player_Laser");   //レーザーの発射音
 		audio_se[18] = Resources.Load<AudioClip>("Sound/SE/gradius_SE_Explosion_1(Small)");     //小型爆発
@@ -150,9 +141,6 @@ public class Obj_Storage : MonoBehaviour
 		audio_se[23] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Subtitles_Display");         //無線受信時
 		audio_se[24] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Subtitles_Display_Parmanent");   //無線のボイスの裏で流すよう
 		audio_se[25] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_Subtitles_Display_Close");   //無線終了時
-		audio_se[26] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_BOSS_No_Hit");               //ボスのボディにあたった
-		audio_se[27] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_CoreShield_destruction");    //ボスのコアシールドを壊したとき
-		audio_se[28] = Resources.Load<AudioClip>("Sound/SE/MANESIUS_SE_BOSS_Core_Hit");             //ボスのコアに当たった時
 
 
 		//------------------------------------------------------------------------------
