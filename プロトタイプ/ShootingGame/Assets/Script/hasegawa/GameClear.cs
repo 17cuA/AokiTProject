@@ -49,7 +49,7 @@ namespace Costom
 			if (!resultDisplay) { resultDisplay = FindObjectOfType<ResultDisplay>(); }
 			// ランキング表示用クラスが設定されていなかったら取得する
 			if (!rankingDisplay) { rankingDisplay = FindObjectOfType<RankingDisplay>(); }
-			rankingDisplay.gameObject.SetActive(false);
+			//rankingDisplay.gameObject.SetActive(false);
 			// キャンバスの取得
 			if (!anyCanvas) { anyCanvas = FindObjectOfType<Canvas>(); }
 			// PressButtonの生成

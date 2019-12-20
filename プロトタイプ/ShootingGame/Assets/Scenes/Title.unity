@@ -287,8 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager:
     defaultButtonNameList:
-    - Fire1
     - Fire2
+    - Fire1
     - Fire3
     - Bit_Freeze
     useButtonNameList:
@@ -4384,6 +4384,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranking_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2322928362876008251, guid: d6207ebe8ead85a4196cb0876a57ecc3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5436380723669709989, guid: d6207ebe8ead85a4196cb0876a57ecc3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4508,6 +4513,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ReferenceResolution.x
       value: 3840
+      objectReference: {fileID: 0}
+    - target: {fileID: 254026138998753346, guid: d6207ebe8ead85a4196cb0876a57ecc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930520275052560000, guid: d6207ebe8ead85a4196cb0876a57ecc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6207ebe8ead85a4196cb0876a57ecc3, type: 3}

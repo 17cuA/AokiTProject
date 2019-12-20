@@ -501,7 +501,7 @@ public class Player1 : character_status
 			if (Shot_Delay > Shot_DelayMax)
 			{
 				//単発の弾の発射
-				if (Input.GetButtonDown(inputManager.Manager.Button["Shot"]) || Input.GetKeyDown(KeyCode.Space))
+				if (Input.GetButtonDown(inputManager.Manager.Button["Shot"]) || Input.GetKeyDown(KeyCode.C))
 				{
 					Shot_Delay = 0;
 					switch (bullet_Type)
@@ -535,14 +535,14 @@ public class Player1 : character_status
 		else
 		{
 			//ボタンを押すのをやめたら弾が出るのが止まるように
-			if (Input.GetButtonUp(inputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.Space))
+			if (Input.GetButtonUp(inputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.C))
 			{
 				Is_Burst = false;
 				shoot_number = 0;
 				return;
 			}
 			//発射ボタンを押したら弾が出続けるようにする
-			else if (Input.GetButton(inputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.Space))
+			else if (Input.GetButton(inputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.C))
 			{
 				Is_Burst = true;
 			}

@@ -105,20 +105,20 @@ public class Bit_Shot : MonoBehaviour
 					//プレイヤーがレーザー状態の時
 					laser_Obj.SetActive(true);
 					//発射ボタンが離されたら
-					if (Input.GetButtonUp(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKeyUp(KeyCode.Space))
+					if (Input.GetButtonUp(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKeyUp(KeyCode.C))
 					{
 						//レーザーストップ
 						//laser_Obj.SetActive(false);
 					}
 					//発射ボタンが押されている間
-					else if (Input.GetButton(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.Space))
+					else if (Input.GetButton(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.C))
 					{
 						//レーザーを出す
 						//laser_Obj.SetActive(true);
 						//レーザー時のミサイル発射の処理
 						if (pl1.activeMissile && missileDelayCnt > pl1.missile_dilay_max)
 						{
-							if (Input.GetButton(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.Space))
+							if (Input.GetButton(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.C))
 							{
 								Missile_Fire();
 							}
@@ -140,20 +140,20 @@ public class Bit_Shot : MonoBehaviour
 					//プレイヤーがレーザー状態の時
 					laser_Obj.SetActive(true);
 					//発射ボタンが離されたら
-					if (Input.GetButtonUp(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKeyUp(KeyCode.Space))
+					if (Input.GetButtonUp(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKeyUp(KeyCode.C))
 					{
 						//レーザーストップ
 						//laser_Obj.SetActive(false);
 					}
 					//発射ボタンが押されている間
-					else if (Input.GetButton(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.Space))
+					else if (Input.GetButton(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.C))
 					{
 						//レーザーを出す
 						//laser_Obj.SetActive(true);
 						//レーザー時のミサイル発射の処理
 						if (pl2.activeMissile && missileDelayCnt > pl2.missile_dilay_max)
 						{
-							if (Input.GetButton(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.Space))
+							if (Input.GetButton(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKey(KeyCode.C))
 							{
 								Missile_Fire();
 							}
@@ -198,7 +198,7 @@ public class Bit_Shot : MonoBehaviour
 				if (shot_Delay > Shot_DelayMax)
 				{
 
-					if (Input.GetButtonDown(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKeyDown(KeyCode.Space))
+					if (Input.GetButtonDown(pl1.InputManager.Manager.Button["Shot"]) || Input.GetKeyDown(KeyCode.C))
 					{
 						shot_Delay = 0;
 						switch (pl1.bullet_Type)
@@ -235,7 +235,7 @@ public class Bit_Shot : MonoBehaviour
 				if (shot_Delay > Shot_DelayMax)
 				{
 
-					//if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
+					//if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.C))
 					//{
 					if (pl1.Is_Burst)
 					{
@@ -287,7 +287,7 @@ public class Bit_Shot : MonoBehaviour
 				{
 					shotNum = 0;
 				}
-				//if (Input.GetButtonUp("Fire1") || Input.GetKey(KeyCode.Space))
+				//if (Input.GetButtonUp("Fire1") || Input.GetKey(KeyCode.C))
 				//{
 				//	shotNum = 0;
 				//}
@@ -305,7 +305,7 @@ public class Bit_Shot : MonoBehaviour
 			{
 				if (shot_Delay > Shot_DelayMax)
 				{
-					if (Input.GetButtonDown(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKeyDown(KeyCode.Space))
+					if (Input.GetButtonDown(pl2.InputManager.Manager.Button["Shot"]) || Input.GetKeyDown(KeyCode.C))
 					{
 						//if (pl2.Is_Burst)
 						//{
@@ -346,7 +346,7 @@ public class Bit_Shot : MonoBehaviour
 				if (shot_Delay > Shot_DelayMax)
 				{
 
-					//if (Input.GetButton("P2_Fire1") || Input.GetKey(KeyCode.Space))
+					//if (Input.GetButton("P2_Fire1") || Input.GetKey(KeyCode.C))
 					//{
 					if (pl2.Is_Burst)
 					{
@@ -394,7 +394,7 @@ public class Bit_Shot : MonoBehaviour
 					}
 					//}
 				}
-				//if (Input.GetButtonUp("P2_Fire1") || Input.GetKey(KeyCode.Space))
+				//if (Input.GetButtonUp("P2_Fire1") || Input.GetKey(KeyCode.C))
 				//{
 				//	shotNum = 0;
 				//}
@@ -575,7 +575,7 @@ public class Bit_Shot : MonoBehaviour
 
 		}
 
-		//if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
+		//if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.C))
 		//{
 		//	Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eOPTION_BULLET, shot_Mazle.transform.position, Direction);
 		//	Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.eOPTION_BULLET, shot_Mazle.transform.position, /*new Quaternion(-8,1,45,0)Quaternion.Euler(0, 0, 45));
@@ -598,7 +598,7 @@ public class Bit_Shot : MonoBehaviour
 		}
 		//GameObject obj = Object_Instantiation.Object_Reboot(Game_Master.OBJECT_NAME.ePLAYER_MISSILE, shot_Mazle.transform.position, Direction);
 		//obj.GetComponent<Missile>().Setting_On_Reboot(1);
-		//missileDelayCnt = 0;
+		missileDelayCnt = 0;
 	}
 
 	private void ActiveLaser()

@@ -194,7 +194,7 @@ public class FollowToPreviousBit : MonoBehaviour
 				}
 				if (!pl1.Is_Resporn)
 				{
-					if (Input.GetButtonUp(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.Y))
+					if (Input.GetButtonUp(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.LeftControl))
 					{
 						isFreeze = false;
 						defPos = transform.position - savePos;
@@ -206,7 +206,7 @@ public class FollowToPreviousBit : MonoBehaviour
 						savePos = transform.position;
 						pos = previousBitObj.transform.position;
 					}
-					else if (Input.GetButton(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.Y))
+					else if (Input.GetButton(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.LeftControl))
 					{
 						isFreeze = true;
 					}
@@ -237,7 +237,7 @@ public class FollowToPreviousBit : MonoBehaviour
 
 				if (!pl2.Is_Resporn)
 				{
-					if (Input.GetButtonUp(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.Y))
+					if (Input.GetButtonUp(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.LeftControl))
 					{
 						isFreeze = false;
 						defPos = transform.position - savePos;
@@ -249,7 +249,7 @@ public class FollowToPreviousBit : MonoBehaviour
 						savePos = transform.position;
 						pos = previousBitObj.transform.position;
 					}
-					else if (Input.GetButton(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.Y))
+					else if (Input.GetButton(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.LeftControl))
 					{
 						isFreeze = true;
 					}

@@ -97,12 +97,12 @@ public class FollowPositions : MonoBehaviour
 		{
 			if (isFollow1P)
 			{
-				if (Input.GetButtonUp(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.Y))
+				if (Input.GetButtonUp(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.LeftControl))
 				{
 					isFreeze = false;
 					//transform.parent = null;
 				}
-				else if (Input.GetButton(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.Y))
+				else if (Input.GetButton(pl1.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.LeftControl))
 				{
 					isFreeze = true;
 					//transform.parent = playerObj.transform;
@@ -112,12 +112,12 @@ public class FollowPositions : MonoBehaviour
 			}
 			else if (isFollow2P)
 			{
-				if (Input.GetButtonUp(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.Y))
+				if (Input.GetButtonUp(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKeyUp(KeyCode.LeftControl))
 				{
 					isFreeze = false;
 					//transform.parent = null;
 				}
-				else if (Input.GetButton(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.Y))
+				else if (Input.GetButton(pl2.InputManager.Manager.Button["Multiple"]) || Input.GetKey(KeyCode.LeftControl))
 				{
 					isFreeze = true;
 					//transform.parent = playerObj.transform;

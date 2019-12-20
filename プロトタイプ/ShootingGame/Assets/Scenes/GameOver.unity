@@ -2070,6 +2070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranking_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2322928362876008251, guid: d6207ebe8ead85a4196cb0876a57ecc3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5436380723669709989, guid: d6207ebe8ead85a4196cb0876a57ecc3,
         type: 3}
       propertyPath: m_LocalPosition.x

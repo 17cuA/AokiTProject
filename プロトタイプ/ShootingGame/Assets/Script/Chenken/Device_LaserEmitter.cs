@@ -219,21 +219,21 @@ class Device_LaserEmitter : MonoBehaviour
 
 	}
 
-    private void OnDisable()
-    {
+	private void OnDisable()
+	{
 
-        if(Obj_Storage.Storage_Data.Laser_Line != null)
-        { 
-             for (int i = 29; i < Obj_Storage.Storage_Data.Laser_Line.Get_Obj().Count; i++)
-             {
-                 if(!Obj_Storage.Storage_Data.Laser_Line.Get_Obj()[i].gameObject.activeSelf)
-                 { 
-                     Destroy(Obj_Storage.Storage_Data.Laser_Line.Get_Obj()[i]);
-                     Obj_Storage.Storage_Data.Laser_Line.Get_Obj().RemoveAt(i);
-                 }
-            }
-        }
-    }
+		if (Obj_Storage.Storage_Data.Laser_Line != null)
+		{
+			for (int i = 29; i < Obj_Storage.Storage_Data.Laser_Line.Get_Obj().Count; i++)
+			{
+				if (!Obj_Storage.Storage_Data.Laser_Line.Get_Obj()[i].gameObject.activeSelf)
+				{
+					Destroy(Obj_Storage.Storage_Data.Laser_Line.Get_Obj()[i]);
+					Obj_Storage.Storage_Data.Laser_Line.Get_Obj().RemoveAt(i);
+				}
+			}
+		}
+	}
     private void Update()
 	{
 
