@@ -18,6 +18,7 @@ public class ModelChanger : MonoBehaviour
 	const string kTextureName = "Albedo";							// 取得したAssetBundleから読み込むテクスチャの名前
 	const string kShaderTextureName = "_BaseColorMap";				// テクスチャを反映させるシェーダー側のプロパティの名前
 	const string kModelName = "Model";								// 取得したAssetBundleから読み込むモデルの名前
+
 	void Awake()
 	{
 		// AssetBundleを取得する
@@ -25,6 +26,7 @@ public class ModelChanger : MonoBehaviour
 		// AssetBundleが取得できなかったら終わる
 		if (!assetBundle)
 		{
+			ErrerProcess();
 			return;
 		}
 		Texture2D importTexture = assetBundle.LoadAsset<Texture2D>(kTextureName);
@@ -34,12 +36,14 @@ public class ModelChanger : MonoBehaviour
 		if (!importTexture)
 		{
 			Debug.LogError("Could not load Texture named " + kTextureName);
+			ErrerProcess();
 			return;
 		}
 		// モデルが読み込めなかったら差し替えずに終わる
 		if (!importModel)
 		{
 			Debug.LogError("Could not load Model named " + kModelName);
+			ErrerProcess();
 			return;
 		}
 		// 元からあるレンダラーをoffにする
@@ -62,5 +66,17 @@ public class ModelChanger : MonoBehaviour
 		meshRenderer.enabled = true;
 		// 角度を0にする
 		transform.rotation = Quaternion.identity;
+	}
+
+	/// <summary>
+	/// モデル等の読み込みができなかった時の処理
+	/// </summary>
+	void ErrerProcess()
+	{
+		Component[] errerHandlerArray = GetComponents(typeof(IModelChangeErrerHandler));
+		foreach (Component c in errerHandlerArray)
+		{
+			c.SendMessage("ModelErrerModification");
+		}
 	}
 }
