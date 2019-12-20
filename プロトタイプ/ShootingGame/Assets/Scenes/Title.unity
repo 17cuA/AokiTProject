@@ -2820,6 +2820,7 @@ GameObject:
   - component: {fileID: 1009784980}
   - component: {fileID: 1009784978}
   - component: {fileID: 1009784976}
+  - component: {fileID: 1009784982}
   m_Layer: 13
   m_Name: vic_viper_0731
   m_TagString: Player
@@ -2939,6 +2940,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1009784982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009784975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996edbe851ab489479bcc3cade3ae5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultScale: {x: 0.02561269, y: 0.02561269, z: 0.02561269}
 --- !u!1 &1009784983
 GameObject:
   m_ObjectHideFlags: 0
