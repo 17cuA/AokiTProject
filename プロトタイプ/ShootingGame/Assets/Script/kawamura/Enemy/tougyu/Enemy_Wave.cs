@@ -128,14 +128,14 @@ public class Enemy_Wave : character_status
 			case State.WaveUp:
 				isFromBack = true;
 				isBehind = false;
-				endMarker = new Vector3(12.0f, transform.position.y, 0);
+				endMarker = new Vector3(7.0f, transform.position.y, 0);
 				distance_two = Vector3.Distance(startMarker, endMarker);
 				break;
 
 			case State.WaveDown:
 				isFromBack = true;
 				isBehind = false;
-				endMarker = new Vector3(12.0f, transform.position.y, 0);
+				endMarker = new Vector3(7.0f, transform.position.y, 0);
 				distance_two = Vector3.Distance(startMarker, endMarker);
 				break;
 
@@ -156,7 +156,7 @@ public class Enemy_Wave : character_status
 			case State.Rush:
 				isFromBack = true;
 				isBehind = false;
-				endMarker = new Vector3(12.0f, transform.position.y, 0);
+				endMarker = new Vector3(7.0f, transform.position.y, 0);
 				distance_two = Vector3.Distance(startMarker, endMarker);
 				break;
 
@@ -171,7 +171,7 @@ public class Enemy_Wave : character_status
 	private void OnEnable()
 	{
 		//transform.localPosition = defaultPos;
-		//startMarker = new Vector3(12.0f, transform.position.y, 40.0f);
+		//startMarker = new Vector3(7.0f, transform.position.y, 40.0f);
 		//endMarker = new Vector3(12.0f, transform.position.y, 0);
 
 	}
@@ -559,7 +559,7 @@ public class Enemy_Wave : character_status
                 //		transform.position = new Vector3(12.0f, transform.position.y, 40.0f);
                 //	}
                 //}
-                //else if(transform.position.x>=12.0f)
+                //else if(transform.position.x>=7.0f)
                 //{
                 //if (isSonicPlay)
                 //{
@@ -612,7 +612,7 @@ public class Enemy_Wave : character_status
 						isWave = true;
 					}
 
-					if (transform.position.x >= 12)
+					if (transform.position.x >= 7)
 					{
 						isSlerp = true;
 						startMarker = transform.position;
@@ -800,6 +800,14 @@ public class Enemy_Wave : character_status
 			}
 		}
 
+		if (transform.position.y > 12.0f || transform.position.y < -12.0f)
+		{
+			groupManage.notDefeatedEnemyCnt++;
+			groupManage.remainingEnemiesCnt -= 1;
+			gameObject.SetActive(false);
+
+		}
+
 		if (hp < 1)
 		{
 			if (haveItem)
@@ -955,7 +963,7 @@ public class Enemy_Wave : character_status
 		{
             if (eState == State.Rush)
             {
-                if (col.gameObject.name == "WallLeft" || col.gameObject.name == "WallTop" || col.gameObject.name == "WallUnder")
+                if (col.gameObject.name == "WallLeft")
                 {
                     groupManage.notDefeatedEnemyCnt++;
                     groupManage.remainingEnemiesCnt -= 1;
@@ -964,25 +972,6 @@ public class Enemy_Wave : character_status
                 }
             }
             else if (col.gameObject.name == "WallLeft")
-			{
-				groupManage.notDefeatedEnemyCnt++;
-				groupManage.remainingEnemiesCnt -= 1;
-				gameObject.SetActive(false);
-			}
-		}
-		else if(isBehind)
-		{
-            if(eState==State.BackRush)
-            {
-                if(col.gameObject.name=="WallRight"|| col.gameObject.name == "WallTop"|| col.gameObject.name == "WallUnder")
-                {
-                    groupManage.notDefeatedEnemyCnt++;
-                    groupManage.remainingEnemiesCnt -= 1;
-                    gameObject.SetActive(false);
-
-                }
-            }
-			else if (col.gameObject.name == "WallRight")
 			{
 				groupManage.notDefeatedEnemyCnt++;
 				groupManage.remainingEnemiesCnt -= 1;
