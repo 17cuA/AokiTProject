@@ -329,8 +329,8 @@ public class Player1 : character_status
 		//プレイヤーの移動に上下左右制限を設ける
 		if (transform.position.y >= 4.5f && y > 0) y = 0;
 		if (transform.position.y <= -4.5f && y < 0) y = 0;
-		if (transform.position.x >= 17.0f && x > 0) x = 0;
-		if (transform.position.x <= -17.0f && x < 0) x = 0;
+		if (transform.position.x >= 8.0f && x > 0) x = 0;
+		if (transform.position.x <= -8.0f && x < 0) x = 0;
 
 		prevPos = target;
 
