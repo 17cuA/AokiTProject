@@ -91,7 +91,8 @@ public class Scene_Manager : MonoBehaviour
 		// 警告シーンに戻るデバッグキー
 		if (Input.GetKeyDown(KeyCode.F2))
 		{
-			Screen_Transition_To_Caution();
+			//Screen_Transition_To_Caution();
+			Screen_Transition_To_Title();
 		}
 	}
 
